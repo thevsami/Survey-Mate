@@ -71,6 +71,7 @@ class MainActivity : BaseActivity() {
             addIfMissing(needed, Manifest.permission.READ_PHONE_STATE)
         }
         addIfMissing(needed, Manifest.permission.READ_CONTACTS)
+        addIfMissing(needed, Manifest.permission.RECORD_AUDIO)
         if (Build.VERSION.SDK_INT >= 33) addIfMissing(needed, Manifest.permission.POST_NOTIFICATIONS)
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && !Settings.canDrawOverlays(this)) {

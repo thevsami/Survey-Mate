@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
@@ -25,11 +26,20 @@ public final class FragmentCallsBinding implements ViewBinding {
   @NonNull
   public final LinearLayout emptyState;
 
+  @NonNull
+  public final RecyclerView recordingList;
+
+  @NonNull
+  public final TextView recordingsTitle;
+
   private FragmentCallsBinding(@NonNull LinearLayout rootView, @NonNull RecyclerView callList,
-      @NonNull LinearLayout emptyState) {
+      @NonNull LinearLayout emptyState, @NonNull RecyclerView recordingList,
+      @NonNull TextView recordingsTitle) {
     this.rootView = rootView;
     this.callList = callList;
     this.emptyState = emptyState;
+    this.recordingList = recordingList;
+    this.recordingsTitle = recordingsTitle;
   }
 
   @Override
@@ -71,7 +81,20 @@ public final class FragmentCallsBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentCallsBinding((LinearLayout) rootView, callList, emptyState);
+      id = R.id.recordingList;
+      RecyclerView recordingList = ViewBindings.findChildViewById(rootView, id);
+      if (recordingList == null) {
+        break missingId;
+      }
+
+      id = R.id.recordingsTitle;
+      TextView recordingsTitle = ViewBindings.findChildViewById(rootView, id);
+      if (recordingsTitle == null) {
+        break missingId;
+      }
+
+      return new FragmentCallsBinding((LinearLayout) rootView, callList, emptyState, recordingList,
+          recordingsTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

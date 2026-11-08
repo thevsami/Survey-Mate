@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.surveymate"
-    android:versionCode="2"
-    android:versionName="1.1" >
+    android:versionCode="3"
+    android:versionName="1.2" >
 
     <uses-sdk
         android:minSdkVersion="26"
@@ -24,6 +24,9 @@
     <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
     <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MICROPHONE" />
 
     <permission
         android:name="com.surveymate.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
@@ -58,6 +61,11 @@
             android:exported="false"
             android:theme="@style/Theme.SurveyMate.Add"
             android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="com.surveymate.MicPermissionActivity"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:theme="@style/Theme.SurveyMate.Translucent" />
 
         <receiver
             android:name="com.surveymate.CallReceiver"
@@ -88,6 +96,11 @@
                 android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
                 android:value="Keeps the in-call Add survey floating button on screen" />
         </service>
+        <service
+            android:name="com.surveymate.CallRecordingService"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="microphone" />
         <service
             android:name="com.surveymate.WhatsAppNotificationListener"
             android:exported="true"

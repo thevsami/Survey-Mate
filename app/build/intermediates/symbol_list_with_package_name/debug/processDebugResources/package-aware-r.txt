@@ -3020,6 +3020,8 @@ drawable avd_show_password
 drawable bg_avatar
 drawable bg_chip
 drawable bg_fab_overlay
+drawable bg_fab_overlay_record
+drawable bg_fab_overlay_recording
 drawable bg_overlay_card
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
@@ -3053,6 +3055,7 @@ drawable ic_launcher_foreground
 drawable ic_m3_chip_check
 drawable ic_m3_chip_checked_circle
 drawable ic_m3_chip_close
+drawable ic_mic
 drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
@@ -3060,7 +3063,9 @@ drawable ic_mtrl_chip_close_circle
 drawable ic_nav_calls
 drawable ic_nav_settings
 drawable ic_nav_surveys
+drawable ic_play
 drawable ic_search_black_24
+drawable ic_stop
 drawable indeterminate_static
 drawable m3_avd_hide_password
 drawable m3_avd_show_password
@@ -3498,6 +3503,7 @@ id open_search_view_toolbar
 id open_search_view_toolbar_container
 id outline
 id outward
+id overlayRoot
 id overshoot
 id packed
 id parallax
@@ -3513,6 +3519,7 @@ id percent
 id permissionList
 id phone
 id pin
+id play
 id pooling_container_listener_holder_tag
 id position
 id postLayout
@@ -3523,6 +3530,11 @@ id progress_horizontal
 id quickAddButton
 id radio
 id ratio
+id recordButton
+id recordIcon
+id recordLabel
+id recordingList
+id recordingsTitle
 id rectangles
 id report_drawn
 id reverseSawtooth
@@ -3816,6 +3828,7 @@ layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
 layout item_call
 layout item_permission
+layout item_recording
 layout item_survey
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
@@ -3931,6 +3944,7 @@ string call_notification_incoming_text
 string call_notification_ongoing_text
 string call_notification_screening_text
 string call_out
+string call_recordings
 string call_whatsapp
 string cancel
 string character_counter_content_description
@@ -3941,6 +3955,7 @@ string client_name
 string close
 string completed_surveys
 string confirm_delete
+string confirm_delete_recording
 string date_hint
 string date_time_required
 string delete
@@ -4094,6 +4109,8 @@ string perm_contacts
 string perm_contacts_desc
 string perm_listener
 string perm_listener_desc
+string perm_mic
+string perm_mic_desc
 string perm_notify
 string perm_notify_desc
 string perm_overlay
@@ -4101,11 +4118,18 @@ string perm_overlay_desc
 string perm_phone
 string perm_phone_desc
 string phone_number
+string play_recording
 string preview_overlay
 string quick_call_text
 string quick_call_title
 string recent_call_error
 string recent_calls
+string record_call
+string recording_notification_text
+string recording_notification_title
+string recording_saved_text
+string recording_saved_title
+string recording_subtitle
 string reminder_1d
 string reminder_2d
 string reminder_4h
@@ -4129,6 +4153,8 @@ string source_manual
 string source_recent
 string source_whatsapp
 string status_bar_notification_info_overflow
+string stop_playback
+string stop_recording
 string survey_title
 string tagline
 string time_hint
@@ -4771,6 +4797,7 @@ style Theme_MaterialComponents_NoActionBar
 style Theme_MaterialComponents_NoActionBar_Bridge
 style Theme_SurveyMate
 style Theme_SurveyMate_Add
+style Theme_SurveyMate_Translucent
 style ThemeOverlay_AppCompat
 style ThemeOverlay_AppCompat_ActionBar
 style ThemeOverlay_AppCompat_Dark

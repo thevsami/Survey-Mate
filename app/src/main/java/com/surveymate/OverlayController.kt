@@ -14,6 +14,8 @@ import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
 import android.view.WindowManager
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.core.content.ContextCompat
 import kotlin.math.abs
 
@@ -24,6 +26,17 @@ object OverlayController {
 
     private val mainHandler = Handler(Looper.getMainLooper())
     private val enableTouchesRunnable = Runnable { enableTouches() }
+    private val tickRunnable = object : Runnable {
+        override fun run() {
+            refreshRecordButton()
+            if (CallRecordingController.recording && overlayView != null) {
+                mainHandler.postDelayed(this, 500)
+            }
+        }
+    }
+    private val recordingListener: (Boolean) -> Unit = {
+        mainHandler.post { refreshRecordButton() }
+    }
     private var windowManager: WindowManager? = null
     private var overlayView: View? = null
     private var params: WindowManager.LayoutParams? = null
@@ -97,8 +110,10 @@ object OverlayController {
         var startY = 0
         var dragged = false
         var tracking = false
+        var pressedRecord = false
         val dragListener = View.OnTouchListener { _, event ->
             val layout = params ?: return@OnTouchListener false
+            val recordButton = view.findViewById<View>(R.id.recordButton)
             when (event.actionMasked) {
                 MotionEvent.ACTION_DOWN -> {
                     if (System.currentTimeMillis() - attachedAt < CLICK_GUARD_MS) {
@@ -111,6 +126,7 @@ object OverlayController {
                     startY = layout.y
                     dragged = false
                     tracking = true
+                    pressedRecord = hitOnScreen(recordButton, event)
                     true
                 }
                 MotionEvent.ACTION_MOVE -> {
@@ -130,7 +146,13 @@ object OverlayController {
                     val canClick = tracking && !dragged &&
                         System.currentTimeMillis() - attachedAt >= CLICK_GUARD_MS
                     tracking = false
-                    if (canClick) openAddSurvey(app)
+                    if (canClick) {
+                        if (pressedRecord) {
+                            CallRecordingController.toggle(app)
+                        } else {
+                            openAddSurvey(app)
+                        }
+                    }
                     true
                 }
                 MotionEvent.ACTION_CANCEL -> {
@@ -141,6 +163,8 @@ object OverlayController {
             }
         }
         view.setOnTouchListener(dragListener)
+        CallRecordingController.addListener(recordingListener)
+        refreshRecordButton()
 
         try {
             windowManager?.addView(view, params)
@@ -150,7 +174,36 @@ object OverlayController {
         } catch (_: Exception) {
             overlayView = null
             visible = false
+            CallRecordingController.removeListener(recordingListener)
         }
+    }
+
+    private fun hitOnScreen(child: View, event: MotionEvent): Boolean {
+        val loc = IntArray(2)
+        child.getLocationOnScreen(loc)
+        val x = event.rawX.toInt()
+        val y = event.rawY.toInt()
+        return x >= loc[0] && x <= loc[0] + child.width &&
+            y >= loc[1] && y <= loc[1] + child.height
+    }
+
+    private fun refreshRecordButton() {
+        val view = overlayView ?: return
+        val button = view.findViewById<View>(R.id.recordButton)
+        val label = view.findViewById<TextView>(R.id.recordLabel)
+        val icon = view.findViewById<ImageView>(R.id.recordIcon)
+        val recording = CallRecordingController.recording
+        button.setBackgroundResource(
+            if (recording) R.drawable.bg_fab_overlay_recording else R.drawable.bg_fab_overlay_record
+        )
+        icon.setImageResource(if (recording) R.drawable.ic_stop else R.drawable.ic_mic)
+        label.text = if (recording) {
+            view.context.getString(R.string.stop_recording, CallRecordingController.formatElapsed())
+        } else {
+            view.context.getString(R.string.record_call)
+        }
+        mainHandler.removeCallbacks(tickRunnable)
+        if (recording) mainHandler.postDelayed(tickRunnable, 500)
     }
 
     private fun enableTouches() {
@@ -180,11 +233,13 @@ object OverlayController {
         } catch (_: Exception) {
             return
         }
-        hide(app)
+        if (!CallRecordingController.recording) hide(app)
     }
 
     private fun detach() {
         mainHandler.removeCallbacks(enableTouchesRunnable)
+        mainHandler.removeCallbacks(tickRunnable)
+        CallRecordingController.removeListener(recordingListener)
         overlayView?.let { view ->
             try {
                 windowManager?.removeView(view)

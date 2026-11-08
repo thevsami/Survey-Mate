@@ -10,6 +10,7 @@ object NotificationHelper {
     const val CHANNEL_CALLS = "survey_calls"
     const val CHANNEL_OVERLAY = "survey_overlay"
     const val CHANNEL_OVERLAY_MIN = "survey_overlay_min"
+    const val CHANNEL_RECORDING = "survey_recording"
 
     fun ensureChannels(context: Context) {
         if (Build.VERSION.SDK_INT < 26) return
@@ -29,6 +30,13 @@ object NotificationHelper {
                 setSound(null, null)
                 enableVibration(false)
                 lockscreenVisibility = android.app.Notification.VISIBILITY_SECRET
+            }
+        )
+        nm.createNotificationChannel(
+            NotificationChannel(CHANNEL_RECORDING, "Call recording", NotificationManager.IMPORTANCE_LOW).apply {
+                setShowBadge(false)
+                setSound(null, null)
+                enableVibration(false)
             }
         )
     }

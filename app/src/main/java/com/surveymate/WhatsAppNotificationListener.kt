@@ -25,8 +25,7 @@ class WhatsAppNotificationListener : NotificationListenerService() {
         val title = extras.getCharSequence(Notification.EXTRA_TITLE)?.toString().orEmpty()
         val text = extras.getCharSequence(Notification.EXTRA_TEXT)?.toString().orEmpty()
         if (looksLikeCall(sbn.notification.category, title, text, sbn)) {
-            OverlayController.hideIfSource(this, Survey.SOURCE_WHATSAPP)
-            CallNumberTracker.markInCall(false, Survey.SOURCE_WHATSAPP)
+            CallSession.onEnded(this, Survey.SOURCE_WHATSAPP)
         }
     }
 

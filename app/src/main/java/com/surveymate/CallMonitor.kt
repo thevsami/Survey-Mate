@@ -66,10 +66,11 @@ object CallMonitor {
                 if (actual == TelephonyManager.CALL_STATE_OFFHOOK ||
                     actual == TelephonyManager.CALL_STATE_RINGING
                 ) return
-                OverlayController.hideIfSource(context, Survey.SOURCE_CALL)
-                if (CallNumberTracker.source == Survey.SOURCE_CALL) {
-                    CallNumberTracker.markInCall(false, Survey.SOURCE_CALL)
-                }
+                CallSession.onEnded(
+                    context,
+                    Survey.SOURCE_CALL,
+                    clearNumber = CallNumberTracker.source == Survey.SOURCE_CALL
+                )
             }
         }
     }

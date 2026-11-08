@@ -1,42 +1,46 @@
 [
     {
-        "merged": "com.surveymate.app-mergeDebugResources-38:/layout/quick_survey_overlay.xml",
-        "source": "com.surveymate.app-main-41:/layout/quick_survey_overlay.xml"
+        "merged": "com.surveymate.app-mergeDebugResources-3:/layout/item_survey.xml",
+        "source": "com.surveymate.app-main-6:/layout/item_survey.xml"
     },
     {
-        "merged": "com.surveymate.app-mergeDebugResources-38:/layout/item_call.xml",
-        "source": "com.surveymate.app-main-41:/layout/item_call.xml"
+        "merged": "com.surveymate.app-mergeDebugResources-3:/layout/item_recording.xml",
+        "source": "com.surveymate.app-main-6:/layout/item_recording.xml"
     },
     {
-        "merged": "com.surveymate.app-mergeDebugResources-38:/layout/fragment_settings.xml",
-        "source": "com.surveymate.app-main-41:/layout/fragment_settings.xml"
+        "merged": "com.surveymate.app-mergeDebugResources-3:/layout/fragment_calls.xml",
+        "source": "com.surveymate.app-main-6:/layout/fragment_calls.xml"
     },
     {
-        "merged": "com.surveymate.app-mergeDebugResources-38:/layout/fragment_surveys.xml",
-        "source": "com.surveymate.app-main-41:/layout/fragment_surveys.xml"
+        "merged": "com.surveymate.app-mergeDebugResources-3:/layout/activity_main.xml",
+        "source": "com.surveymate.app-main-6:/layout/activity_main.xml"
     },
     {
-        "merged": "com.surveymate.app-mergeDebugResources-38:/layout/item_survey.xml",
-        "source": "com.surveymate.app-main-41:/layout/item_survey.xml"
+        "merged": "com.surveymate.app-mergeDebugResources-3:/layout/dialog_survey.xml",
+        "source": "com.surveymate.app-main-6:/layout/dialog_survey.xml"
     },
     {
-        "merged": "com.surveymate.app-mergeDebugResources-38:/layout/dialog_survey.xml",
-        "source": "com.surveymate.app-main-41:/layout/dialog_survey.xml"
+        "merged": "com.surveymate.app-mergeDebugResources-3:/layout/item_permission.xml",
+        "source": "com.surveymate.app-main-6:/layout/item_permission.xml"
     },
     {
-        "merged": "com.surveymate.app-mergeDebugResources-38:/layout/activity_main.xml",
-        "source": "com.surveymate.app-main-41:/layout/activity_main.xml"
+        "merged": "com.surveymate.app-mergeDebugResources-3:/layout/item_call.xml",
+        "source": "com.surveymate.app-main-6:/layout/item_call.xml"
     },
     {
-        "merged": "com.surveymate.app-mergeDebugResources-38:/layout/fragment_calls.xml",
-        "source": "com.surveymate.app-main-41:/layout/fragment_calls.xml"
+        "merged": "com.surveymate.app-mergeDebugResources-3:/layout/activity_add_survey.xml",
+        "source": "com.surveymate.app-main-6:/layout/activity_add_survey.xml"
     },
     {
-        "merged": "com.surveymate.app-mergeDebugResources-38:/layout/item_permission.xml",
-        "source": "com.surveymate.app-main-41:/layout/item_permission.xml"
+        "merged": "com.surveymate.app-mergeDebugResources-3:/layout/quick_survey_overlay.xml",
+        "source": "com.surveymate.app-main-6:/layout/quick_survey_overlay.xml"
     },
     {
-        "merged": "com.surveymate.app-mergeDebugResources-38:/layout/activity_add_survey.xml",
-        "source": "com.surveymate.app-main-41:/layout/activity_add_survey.xml"
+        "merged": "com.surveymate.app-mergeDebugResources-3:/layout/fragment_surveys.xml",
+        "source": "com.surveymate.app-main-6:/layout/fragment_surveys.xml"
+    },
+    {
+        "merged": "com.surveymate.app-mergeDebugResources-3:/layout/fragment_settings.xml",
+        "source": "com.surveymate.app-main-6:/layout/fragment_settings.xml"
     }
 ]

@@ -59,7 +59,7 @@
     <string name="perm_notify">Notifications</string>
     <string name="perm_notify_desc">Survey reminders 2 days, 1 day and 4 hours before</string>
     <string name="perm_overlay">Display over other apps</string>
-    <string name="perm_overlay_desc">Show the movable Add survey button during a call</string>
+    <string name="perm_overlay_desc">Show the movable Add survey and Record buttons during a call</string>
     <string name="perm_listener">Notification access</string>
     <string name="perm_listener_desc">Detect WhatsApp voice and video calls</string>
     <string name="perm_alarms">Exact alarms</string>
@@ -90,6 +90,19 @@
     <string name="preview_overlay">Preview floating button</string>
     <string name="duration_sec">%1$ds</string>
     <string name="duration_min">%1$d min</string>
+    <string name="record_call">Record</string>
+    <string name="stop_recording">Stop %1$s</string>
+    <string name="call_recordings">Call recordings</string>
+    <string name="play_recording">Play</string>
+    <string name="stop_playback">Stop</string>
+    <string name="recording_subtitle">%1$s · %2$s · %3$s</string>
+    <string name="confirm_delete_recording">Delete this recording?</string>
+    <string name="perm_mic">Microphone</string>
+    <string name="perm_mic_desc">Record a call from the floating Record button and save it with the phone number</string>
+    <string name="recording_notification_title">Recording call</string>
+    <string name="recording_notification_text">Saving audio for %1$s</string>
+    <string name="recording_saved_title">Recording saved</string>
+    <string name="recording_saved_text">Saved with %1$s</string>
     <string-array name="language_options">
         <item>@string/language_english</item>
         <item>@string/language_sinhala</item>

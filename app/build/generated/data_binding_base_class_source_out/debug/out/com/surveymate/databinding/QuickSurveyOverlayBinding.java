@@ -4,25 +4,47 @@ package com.surveymate.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
 import com.surveymate.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
+import java.lang.String;
 
 public final class QuickSurveyOverlayBinding implements ViewBinding {
   @NonNull
   private final LinearLayout rootView;
 
   @NonNull
+  public final LinearLayout overlayRoot;
+
+  @NonNull
   public final LinearLayout quickAddButton;
 
+  @NonNull
+  public final LinearLayout recordButton;
+
+  @NonNull
+  public final ImageView recordIcon;
+
+  @NonNull
+  public final TextView recordLabel;
+
   private QuickSurveyOverlayBinding(@NonNull LinearLayout rootView,
-      @NonNull LinearLayout quickAddButton) {
+      @NonNull LinearLayout overlayRoot, @NonNull LinearLayout quickAddButton,
+      @NonNull LinearLayout recordButton, @NonNull ImageView recordIcon,
+      @NonNull TextView recordLabel) {
     this.rootView = rootView;
+    this.overlayRoot = overlayRoot;
     this.quickAddButton = quickAddButton;
+    this.recordButton = recordButton;
+    this.recordIcon = recordIcon;
+    this.recordLabel = recordLabel;
   }
 
   @Override
@@ -48,12 +70,40 @@ public final class QuickSurveyOverlayBinding implements ViewBinding {
 
   @NonNull
   public static QuickSurveyOverlayBinding bind(@NonNull View rootView) {
-    if (rootView == null) {
-      throw new NullPointerException("rootView");
+    // The body of this method is generated in a way you would not otherwise write.
+    // This is done to optimize the compiled bytecode for size and performance.
+    int id;
+    missingId: {
+      LinearLayout overlayRoot = (LinearLayout) rootView;
+
+      id = R.id.quickAddButton;
+      LinearLayout quickAddButton = ViewBindings.findChildViewById(rootView, id);
+      if (quickAddButton == null) {
+        break missingId;
+      }
+
+      id = R.id.recordButton;
+      LinearLayout recordButton = ViewBindings.findChildViewById(rootView, id);
+      if (recordButton == null) {
+        break missingId;
+      }
+
+      id = R.id.recordIcon;
+      ImageView recordIcon = ViewBindings.findChildViewById(rootView, id);
+      if (recordIcon == null) {
+        break missingId;
+      }
+
+      id = R.id.recordLabel;
+      TextView recordLabel = ViewBindings.findChildViewById(rootView, id);
+      if (recordLabel == null) {
+        break missingId;
+      }
+
+      return new QuickSurveyOverlayBinding((LinearLayout) rootView, overlayRoot, quickAddButton,
+          recordButton, recordIcon, recordLabel);
     }
-
-    LinearLayout quickAddButton = (LinearLayout) rootView;
-
-    return new QuickSurveyOverlayBinding((LinearLayout) rootView, quickAddButton);
+    String missingId = rootView.getResources().getResourceName(id);
+    throw new NullPointerException("Missing required view with ID: ".concat(missingId));
   }
 }

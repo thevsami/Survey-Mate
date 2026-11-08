@@ -1,29 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.surveymate.app-mergeDebugResources-37:/values-v23/values-v23.xml",
+            "outputFile": "com.surveymate.app-mergeDebugResources-2:/values-v23/values-v23.xml",
             "map": [
                 {
-                    "source": "/Users/sami/.gradle/caches/8.14.5/transforms/9c08d13a08042e5c50ea8f04ef96f223/transformed/cardview-1.0.0/res/values-v23/values-v23.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endLines": "4",
-                        "endColumns": "12",
-                        "endOffsets": "200"
-                    },
-                    "to": {
-                        "startLines": "50",
-                        "startColumns": "4",
-                        "startOffsets": "3232",
-                        "endLines": "52",
-                        "endColumns": "12",
-                        "endOffsets": "3377"
-                    }
-                },
-                {
-                    "source": "/Users/sami/.gradle/caches/8.14.5/transforms/3915eb80552bf0f3e02aa9630b81ea5c/transformed/material-1.12.0/res/values-v23/values-v23.xml",
+                    "source": "/private/var/folders/l7/5z0wp_2x3p7321r_ygyrnxd80000gn/T/cursor-sandbox-cache/b1b0159c9ba4adbf45259f499d2ce36a/gradle/caches/8.14.5/transforms/3915eb80552bf0f3e02aa9630b81ea5c/transformed/material-1.12.0/res/values-v23/values-v23.xml",
                     "from": {
                         "startLines": "2,5,9,13,16,19,22,25,28,32",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",
@@ -42,7 +23,26 @@
                     }
                 },
                 {
-                    "source": "/Users/sami/.gradle/caches/8.14.5/transforms/cd6c4870e39408201efbcd9ab44da013/transformed/appcompat-1.7.0/res/values-v23/values-v23.xml",
+                    "source": "/private/var/folders/l7/5z0wp_2x3p7321r_ygyrnxd80000gn/T/cursor-sandbox-cache/b1b0159c9ba4adbf45259f499d2ce36a/gradle/caches/8.14.5/transforms/9c08d13a08042e5c50ea8f04ef96f223/transformed/cardview-1.0.0/res/values-v23/values-v23.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "4",
+                        "endColumns": "12",
+                        "endOffsets": "200"
+                    },
+                    "to": {
+                        "startLines": "50",
+                        "startColumns": "4",
+                        "startOffsets": "3232",
+                        "endLines": "52",
+                        "endColumns": "12",
+                        "endOffsets": "3377"
+                    }
+                },
+                {
+                    "source": "/private/var/folders/l7/5z0wp_2x3p7321r_ygyrnxd80000gn/T/cursor-sandbox-cache/b1b0159c9ba4adbf45259f499d2ce36a/gradle/caches/8.14.5/transforms/cd6c4870e39408201efbcd9ab44da013/transformed/appcompat-1.7.0/res/values-v23/values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,20,34,35,36,39,43,44,45,46",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",

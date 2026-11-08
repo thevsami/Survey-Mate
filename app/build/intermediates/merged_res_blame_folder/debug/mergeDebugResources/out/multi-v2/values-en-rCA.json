@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.surveymate.app-mergeDebugResources-37:/values-en-rCA/values-en-rCA.xml",
+            "outputFile": "com.surveymate.app-mergeDebugResources-2:/values-en-rCA/values-en-rCA.xml",
             "map": [
                 {
-                    "source": "/Users/sami/.gradle/caches/8.14.5/transforms/cd6c4870e39408201efbcd9ab44da013/transformed/appcompat-1.7.0/res/values-en-rCA/values-en-rCA.xml",
+                    "source": "/private/var/folders/l7/5z0wp_2x3p7321r_ygyrnxd80000gn/T/cursor-sandbox-cache/b1b0159c9ba4adbf45259f499d2ce36a/gradle/caches/8.14.5/transforms/cd6c4870e39408201efbcd9ab44da013/transformed/appcompat-1.7.0/res/values-en-rCA/values-en-rCA.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/Users/sami/.gradle/caches/8.14.5/transforms/0de731bcd7455cc4e69b4d632ba260f5/transformed/core-1.15.0/res/values-en-rCA/values-en-rCA.xml",
+                    "source": "/private/var/folders/l7/5z0wp_2x3p7321r_ygyrnxd80000gn/T/cursor-sandbox-cache/b1b0159c9ba4adbf45259f499d2ce36a/gradle/caches/8.14.5/transforms/0de731bcd7455cc4e69b4d632ba260f5/transformed/core-1.15.0/res/values-en-rCA/values-en-rCA.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",

@@ -59,7 +59,7 @@
     <string name="perm_notify">දැනුම්දීම්</string>
     <string name="perm_notify_desc">දින 2, දින 1 සහ පැය 4කට පෙර reminders</string>
     <string name="perm_overlay">අනෙක් apps උඩ පෙන්වන්න</string>
-    <string name="perm_overlay_desc">කතාවකදී චලනය කළ හැකි Add button එක</string>
+    <string name="perm_overlay_desc">කතාවකදී Add survey සහ Record බොත්තම්</string>
     <string name="perm_listener">Notification access</string>
     <string name="perm_listener_desc">WhatsApp කතා හඳුනා ගන්න</string>
     <string name="perm_alarms">නිවැරදි alarms</string>
@@ -90,6 +90,19 @@
     <string name="preview_overlay">Floating button එක බලන්න</string>
     <string name="duration_sec">තත් %1$d</string>
     <string name="duration_min">විනාඩි %1$d</string>
+    <string name="record_call">රෙකෝඩ්</string>
+    <string name="stop_recording">නවත්වන්න %1$s</string>
+    <string name="call_recordings">කතා රෙකෝඩ්</string>
+    <string name="play_recording">අසන්න</string>
+    <string name="stop_playback">නවත්වන්න</string>
+    <string name="recording_subtitle">%1$s · %2$s · %3$s</string>
+    <string name="confirm_delete_recording">මේ රෙකෝඩ් එක මකන්නද?</string>
+    <string name="perm_mic">මයික්‍රොෆෝන්</string>
+    <string name="perm_mic_desc">කතාවකදී Record බොත්තමෙන් රෙකෝඩ් කර අංකය සමඟ සුරකින්න</string>
+    <string name="recording_notification_title">කතාව රෙකෝඩ් වෙනවා</string>
+    <string name="recording_notification_text">%1$s සඳහා සුරකිනවා</string>
+    <string name="recording_saved_title">රෙකෝඩ් එක සුරැකුණා</string>
+    <string name="recording_saved_text">%1$s සමඟ සුරැකුණා</string>
     <string-array name="language_options">
         <item>@string/language_english</item>
         <item>@string/language_sinhala</item>

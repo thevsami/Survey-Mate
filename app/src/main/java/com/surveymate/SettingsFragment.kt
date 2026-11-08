@@ -82,6 +82,11 @@ class SettingsFragment : Fragment() {
             notificationsEnabled()
         ) { (activity as MainActivity).requestRuntimePermissions() }
         addRow(
+            getString(R.string.perm_mic),
+            getString(R.string.perm_mic_desc),
+            granted(Manifest.permission.RECORD_AUDIO)
+        ) { (activity as MainActivity).requestRuntimePermissions() }
+        addRow(
             getString(R.string.perm_overlay),
             getString(R.string.perm_overlay_desc),
             Settings.canDrawOverlays(requireContext())

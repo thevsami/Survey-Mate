@@ -2021,6 +2021,7 @@
     <string name="call_notification_ongoing_text">Ongoing call</string>
     <string name="call_notification_screening_text">Screening an incoming call</string>
     <string name="call_out">Outgoing</string>
+    <string name="call_recordings">Call recordings</string>
     <string name="call_whatsapp">WhatsApp</string>
     <string name="cancel">Cancel</string>
     <string name="character_counter_content_description">Characters entered %1$d of %2$d</string>
@@ -2031,6 +2032,7 @@
     <string name="close">Close</string>
     <string name="completed_surveys">Completed</string>
     <string name="confirm_delete">Delete this survey?</string>
+    <string name="confirm_delete_recording">Delete this recording?</string>
     <string name="date_hint">Survey date</string>
     <string name="date_time_required">Please choose a date and time</string>
     <string name="delete">Delete</string>
@@ -2192,18 +2194,27 @@
     <string name="perm_contacts_desc">Show names next to recent numbers</string>
     <string name="perm_listener">Notification access</string>
     <string name="perm_listener_desc">Detect WhatsApp voice and video calls</string>
+    <string name="perm_mic">Microphone</string>
+    <string name="perm_mic_desc">Record a call from the floating Record button and save it with the phone number</string>
     <string name="perm_notify">Notifications</string>
     <string name="perm_notify_desc">Survey reminders 2 days, 1 day and 4 hours before</string>
     <string name="perm_overlay">Display over other apps</string>
-    <string name="perm_overlay_desc">Show the movable Add survey button during a call</string>
+    <string name="perm_overlay_desc">Show the movable Add survey and Record buttons during a call</string>
     <string name="perm_phone">Phone and call log</string>
     <string name="perm_phone_desc">Read the number from incoming and outgoing calls</string>
     <string name="phone_number">Phone number</string>
+    <string name="play_recording">Play</string>
     <string name="preview_overlay">Preview floating button</string>
     <string name="quick_call_text">Add a survey for %1$s</string>
     <string name="quick_call_title">Call in progress</string>
     <string name="recent_call_error">No recent call found</string>
     <string name="recent_calls">Recent calls</string>
+    <string name="record_call">Record</string>
+    <string name="recording_notification_text">Saving audio for %1$s</string>
+    <string name="recording_notification_title">Recording call</string>
+    <string name="recording_saved_text">Saved with %1$s</string>
+    <string name="recording_saved_title">Recording saved</string>
+    <string name="recording_subtitle">%1$s · %2$s · %3$s</string>
     <string name="reminder_1d">Survey tomorrow</string>
     <string name="reminder_2d">Survey in 2 days</string>
     <string name="reminder_4h">Survey in 4 hours</string>
@@ -2229,6 +2240,8 @@
     <string name="source_recent">From recent calls</string>
     <string name="source_whatsapp">From WhatsApp call</string>
     <string name="status_bar_notification_info_overflow">999+</string>
+    <string name="stop_playback">Stop</string>
+    <string name="stop_recording">Stop %1$s</string>
     <string name="survey_title">Survey Mate</string>
     <string name="tagline">Never miss a site visit</string>
     <string name="time_hint">Survey time</string>
@@ -6668,6 +6681,13 @@
     </style>
     <style name="Theme.SurveyMate.Add" parent="Theme.SurveyMate">
         <item name="android:windowSoftInputMode">adjustResize</item>
+    </style>
+    <style name="Theme.SurveyMate.Translucent" parent="Theme.SurveyMate">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">false</item>
     </style>
     <style name="ThemeOverlay.AppCompat" parent="Base.ThemeOverlay.AppCompat"/>
     <style name="ThemeOverlay.AppCompat.ActionBar" parent="Base.ThemeOverlay.AppCompat.ActionBar"/>

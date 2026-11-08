@@ -27,8 +27,7 @@ class CallReceiver : BroadcastReceiver() {
                 OverlayController.show(context, Survey.SOURCE_CALL)
             }
             TelephonyManager.EXTRA_STATE_IDLE -> {
-                OverlayController.hideIfSource(context, Survey.SOURCE_CALL)
-                CallNumberTracker.markInCall(false, Survey.SOURCE_CALL)
+                CallSession.onEnded(context, Survey.SOURCE_CALL)
             }
         }
     }
