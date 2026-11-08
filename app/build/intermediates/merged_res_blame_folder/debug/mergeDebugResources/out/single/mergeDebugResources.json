@@ -1,170 +1,190 @@
 [
     {
-        "merged": "com.surveymate.app-debug-4:/drawable_bg_fab_overlay.xml.flat",
-        "source": "com.surveymate.app-main-6:/drawable/bg_fab_overlay.xml"
+        "merged": "com.surveymate.app-debug-39:/layout_item_permission.xml.flat",
+        "source": "com.surveymate.app-main-41:/layout/item_permission.xml"
     },
     {
-        "merged": "com.surveymate.app-debug-4:/drawable_bg_avatar.xml.flat",
-        "source": "com.surveymate.app-main-6:/drawable/bg_avatar.xml"
+        "merged": "com.surveymate.app-debug-39:/layout_item_recording.xml.flat",
+        "source": "com.surveymate.app-main-41:/layout/item_recording.xml"
     },
     {
-        "merged": "com.surveymate.app-debug-4:/drawable_ic_close.xml.flat",
-        "source": "com.surveymate.app-main-6:/drawable/ic_close.xml"
+        "merged": "com.surveymate.app-debug-39:/layout_item_survey.xml.flat",
+        "source": "com.surveymate.app-main-41:/layout/item_survey.xml"
     },
     {
-        "merged": "com.surveymate.app-debug-4:/layout_fragment_surveys.xml.flat",
-        "source": "com.surveymate.app-main-6:/layout/fragment_surveys.xml"
+        "merged": "com.surveymate.app-debug-39:/layout_fragment_settings.xml.flat",
+        "source": "com.surveymate.app-main-41:/layout/fragment_settings.xml"
     },
     {
-        "merged": "com.surveymate.app-debug-4:/drawable_bg_overlay_card.xml.flat",
-        "source": "com.surveymate.app-main-6:/drawable/bg_overlay_card.xml"
+        "merged": "com.surveymate.app-debug-39:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.surveymate.app-main-41:/mipmap-xxhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.surveymate.app-debug-4:/mipmap-mdpi_ic_launcher.png.flat",
-        "source": "com.surveymate.app-main-6:/mipmap-mdpi/ic_launcher.png"
+        "merged": "com.surveymate.app-debug-39:/drawable_ic_pause.xml.flat",
+        "source": "com.surveymate.app-main-41:/drawable/ic_pause.xml"
     },
     {
-        "merged": "com.surveymate.app-debug-4:/mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "com.surveymate.app-main-6:/mipmap-xxhdpi/ic_launcher.png"
+        "merged": "com.surveymate.app-debug-39:/drawable_ic_mic.xml.flat",
+        "source": "com.surveymate.app-main-41:/drawable/ic_mic.xml"
     },
     {
-        "merged": "com.surveymate.app-debug-4:/mipmap-xhdpi_ic_launcher_round.png.flat",
-        "source": "com.surveymate.app-main-6:/mipmap-xhdpi/ic_launcher_round.png"
+        "merged": "com.surveymate.app-debug-39:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.surveymate.app-main-41:/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
     {
-        "merged": "com.surveymate.app-debug-4:/layout_item_permission.xml.flat",
-        "source": "com.surveymate.app-main-6:/layout/item_permission.xml"
+        "merged": "com.surveymate.app-debug-39:/drawable_ic_add.xml.flat",
+        "source": "com.surveymate.app-main-41:/drawable/ic_add.xml"
     },
     {
-        "merged": "com.surveymate.app-debug-4:/drawable_ic_nav_settings.xml.flat",
-        "source": "com.surveymate.app-main-6:/drawable/ic_nav_settings.xml"
+        "merged": "com.surveymate.app-debug-39:/drawable_bg_fab_overlay_recording.xml.flat",
+        "source": "com.surveymate.app-main-41:/drawable/bg_fab_overlay_recording.xml"
     },
     {
-        "merged": "com.surveymate.app-debug-4:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "com.surveymate.app-main-6:/mipmap-xxxhdpi/ic_launcher_round.png"
+        "merged": "com.surveymate.app-debug-39:/drawable_ic_app_logo.xml.flat",
+        "source": "com.surveymate.app-main-41:/drawable/ic_app_logo.xml"
     },
     {
-        "merged": "com.surveymate.app-debug-4:/mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "com.surveymate.app-main-6:/mipmap-xxxhdpi/ic_launcher.png"
+        "merged": "com.surveymate.app-debug-39:/drawable_ic_drag.xml.flat",
+        "source": "com.surveymate.app-main-41:/drawable/ic_drag.xml"
     },
     {
-        "merged": "com.surveymate.app-debug-4:/drawable_ic_drag.xml.flat",
-        "source": "com.surveymate.app-main-6:/drawable/ic_drag.xml"
+        "merged": "com.surveymate.app-debug-39:/layout_fragment_calls.xml.flat",
+        "source": "com.surveymate.app-main-41:/layout/fragment_calls.xml"
     },
     {
-        "merged": "com.surveymate.app-debug-4:/layout_activity_main.xml.flat",
-        "source": "com.surveymate.app-main-6:/layout/activity_main.xml"
+        "merged": "com.surveymate.app-debug-39:/drawable_ic_nav_calls.xml.flat",
+        "source": "com.surveymate.app-main-41:/drawable/ic_nav_calls.xml"
     },
     {
-        "merged": "com.surveymate.app-debug-4:/drawable_ic_add.xml.flat",
-        "source": "com.surveymate.app-main-6:/drawable/ic_add.xml"
+        "merged": "com.surveymate.app-debug-39:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.surveymate.app-main-41:/mipmap-hdpi/ic_launcher.png"
     },
     {
-        "merged": "com.surveymate.app-debug-4:/layout_item_call.xml.flat",
-        "source": "com.surveymate.app-main-6:/layout/item_call.xml"
+        "merged": "com.surveymate.app-debug-39:/layout_item_call.xml.flat",
+        "source": "com.surveymate.app-main-41:/layout/item_call.xml"
     },
     {
-        "merged": "com.surveymate.app-debug-4:/menu_bottom_nav.xml.flat",
-        "source": "com.surveymate.app-main-6:/menu/bottom_nav.xml"
+        "merged": "com.surveymate.app-debug-39:/layout_fragment_surveys.xml.flat",
+        "source": "com.surveymate.app-main-41:/layout/fragment_surveys.xml"
     },
     {
-        "merged": "com.surveymate.app-debug-4:/drawable_ic_stop.xml.flat",
-        "source": "com.surveymate.app-main-6:/drawable/ic_stop.xml"
+        "merged": "com.surveymate.app-debug-39:/drawable_ic_delete.xml.flat",
+        "source": "com.surveymate.app-main-41:/drawable/ic_delete.xml"
     },
     {
-        "merged": "com.surveymate.app-debug-4:/drawable_bg_fab_overlay_record.xml.flat",
-        "source": "com.surveymate.app-main-6:/drawable/bg_fab_overlay_record.xml"
+        "merged": "com.surveymate.app-debug-39:/drawable_ic_nav_surveys.xml.flat",
+        "source": "com.surveymate.app-main-41:/drawable/ic_nav_surveys.xml"
     },
     {
-        "merged": "com.surveymate.app-debug-4:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "com.surveymate.app-main-6:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "com.surveymate.app-debug-39:/menu_bottom_nav.xml.flat",
+        "source": "com.surveymate.app-main-41:/menu/bottom_nav.xml"
     },
     {
-        "merged": "com.surveymate.app-debug-4:/layout_item_recording.xml.flat",
-        "source": "com.surveymate.app-main-6:/layout/item_recording.xml"
+        "merged": "com.surveymate.app-debug-39:/drawable_bg_play_button.xml.flat",
+        "source": "com.surveymate.app-main-41:/drawable/bg_play_button.xml"
     },
     {
-        "merged": "com.surveymate.app-debug-4:/drawable_ic_launcher_background.xml.flat",
-        "source": "com.surveymate.app-main-6:/drawable/ic_launcher_background.xml"
+        "merged": "com.surveymate.app-debug-39:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.surveymate.app-main-41:/drawable/ic_launcher_background.xml"
     },
     {
-        "merged": "com.surveymate.app-debug-4:/drawable_bg_chip.xml.flat",
-        "source": "com.surveymate.app-main-6:/drawable/bg_chip.xml"
+        "merged": "com.surveymate.app-debug-39:/drawable_bg_fab_overlay.xml.flat",
+        "source": "com.surveymate.app-main-41:/drawable/bg_fab_overlay.xml"
     },
     {
-        "merged": "com.surveymate.app-debug-4:/mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "com.surveymate.app-main-6:/mipmap-xhdpi/ic_launcher.png"
+        "merged": "com.surveymate.app-debug-39:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.surveymate.app-main-41:/drawable/ic_launcher_foreground.xml"
     },
     {
-        "merged": "com.surveymate.app-debug-4:/drawable_ic_launcher_foreground.xml.flat",
-        "source": "com.surveymate.app-main-6:/drawable/ic_launcher_foreground.xml"
+        "merged": "com.surveymate.app-debug-39:/layout_activity_add_survey.xml.flat",
+        "source": "com.surveymate.app-main-41:/layout/activity_add_survey.xml"
     },
     {
-        "merged": "com.surveymate.app-debug-4:/drawable_bg_fab_overlay_recording.xml.flat",
-        "source": "com.surveymate.app-main-6:/drawable/bg_fab_overlay_recording.xml"
+        "merged": "com.surveymate.app-debug-39:/drawable_bg_avatar.xml.flat",
+        "source": "com.surveymate.app-main-41:/drawable/bg_avatar.xml"
     },
     {
-        "merged": "com.surveymate.app-debug-4:/layout_fragment_calls.xml.flat",
-        "source": "com.surveymate.app-main-6:/layout/fragment_calls.xml"
+        "merged": "com.surveymate.app-debug-39:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.surveymate.app-main-41:/mipmap-xxxhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.surveymate.app-debug-4:/mipmap-hdpi_ic_launcher_round.png.flat",
-        "source": "com.surveymate.app-main-6:/mipmap-hdpi/ic_launcher_round.png"
+        "merged": "com.surveymate.app-debug-39:/drawable_bg_fab_overlay_record.xml.flat",
+        "source": "com.surveymate.app-main-41:/drawable/bg_fab_overlay_record.xml"
     },
     {
-        "merged": "com.surveymate.app-debug-4:/drawable_ic_play.xml.flat",
-        "source": "com.surveymate.app-main-6:/drawable/ic_play.xml"
+        "merged": "com.surveymate.app-debug-39:/layout_fragment_recordings.xml.flat",
+        "source": "com.surveymate.app-main-41:/layout/fragment_recordings.xml"
     },
     {
-        "merged": "com.surveymate.app-debug-4:/mipmap-hdpi_ic_launcher.png.flat",
-        "source": "com.surveymate.app-main-6:/mipmap-hdpi/ic_launcher.png"
+        "merged": "com.surveymate.app-debug-39:/drawable_bg_chip.xml.flat",
+        "source": "com.surveymate.app-main-41:/drawable/bg_chip.xml"
     },
     {
-        "merged": "com.surveymate.app-debug-4:/layout_fragment_settings.xml.flat",
-        "source": "com.surveymate.app-main-6:/layout/fragment_settings.xml"
+        "merged": "com.surveymate.app-debug-39:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.surveymate.app-main-41:/mipmap-mdpi/ic_launcher.png"
     },
     {
-        "merged": "com.surveymate.app-debug-4:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "com.surveymate.app-main-6:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "com.surveymate.app-debug-39:/drawable_ic_play.xml.flat",
+        "source": "com.surveymate.app-main-41:/drawable/ic_play.xml"
     },
     {
-        "merged": "com.surveymate.app-debug-4:/drawable_ic_app_logo.xml.flat",
-        "source": "com.surveymate.app-main-6:/drawable/ic_app_logo.xml"
+        "merged": "com.surveymate.app-debug-39:/drawable_ic_nav_settings.xml.flat",
+        "source": "com.surveymate.app-main-41:/drawable/ic_nav_settings.xml"
     },
     {
-        "merged": "com.surveymate.app-debug-4:/layout_quick_survey_overlay.xml.flat",
-        "source": "com.surveymate.app-main-6:/layout/quick_survey_overlay.xml"
+        "merged": "com.surveymate.app-debug-39:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "com.surveymate.app-main-41:/mipmap-xxhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "com.surveymate.app-debug-4:/drawable_ic_mic.xml.flat",
-        "source": "com.surveymate.app-main-6:/drawable/ic_mic.xml"
+        "merged": "com.surveymate.app-debug-39:/layout_activity_main.xml.flat",
+        "source": "com.surveymate.app-main-41:/layout/activity_main.xml"
     },
     {
-        "merged": "com.surveymate.app-debug-4:/layout_dialog_survey.xml.flat",
-        "source": "com.surveymate.app-main-6:/layout/dialog_survey.xml"
+        "merged": "com.surveymate.app-debug-39:/layout_dialog_survey.xml.flat",
+        "source": "com.surveymate.app-main-41:/layout/dialog_survey.xml"
     },
     {
-        "merged": "com.surveymate.app-debug-4:/mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "com.surveymate.app-main-6:/mipmap-xxhdpi/ic_launcher_round.png"
+        "merged": "com.surveymate.app-debug-39:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "com.surveymate.app-main-41:/mipmap-xhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "com.surveymate.app-debug-4:/layout_item_survey.xml.flat",
-        "source": "com.surveymate.app-main-6:/layout/item_survey.xml"
+        "merged": "com.surveymate.app-debug-39:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "com.surveymate.app-main-41:/mipmap-hdpi/ic_launcher_round.png"
     },
     {
-        "merged": "com.surveymate.app-debug-4:/layout_activity_add_survey.xml.flat",
-        "source": "com.surveymate.app-main-6:/layout/activity_add_survey.xml"
+        "merged": "com.surveymate.app-debug-39:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "com.surveymate.app-main-41:/mipmap-xxxhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "com.surveymate.app-debug-4:/mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "com.surveymate.app-main-6:/mipmap-mdpi/ic_launcher_round.png"
+        "merged": "com.surveymate.app-debug-39:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.surveymate.app-main-41:/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
-        "merged": "com.surveymate.app-debug-4:/drawable_ic_nav_surveys.xml.flat",
-        "source": "com.surveymate.app-main-6:/drawable/ic_nav_surveys.xml"
+        "merged": "com.surveymate.app-debug-39:/drawable_ic_close.xml.flat",
+        "source": "com.surveymate.app-main-41:/drawable/ic_close.xml"
     },
     {
-        "merged": "com.surveymate.app-debug-4:/drawable_ic_nav_calls.xml.flat",
-        "source": "com.surveymate.app-main-6:/drawable/ic_nav_calls.xml"
+        "merged": "com.surveymate.app-debug-39:/drawable_ic_stop.xml.flat",
+        "source": "com.surveymate.app-main-41:/drawable/ic_stop.xml"
+    },
+    {
+        "merged": "com.surveymate.app-debug-39:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "com.surveymate.app-main-41:/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.surveymate.app-debug-39:/drawable_bg_overlay_card.xml.flat",
+        "source": "com.surveymate.app-main-41:/drawable/bg_overlay_card.xml"
+    },
+    {
+        "merged": "com.surveymate.app-debug-39:/drawable_ic_nav_recordings.xml.flat",
+        "source": "com.surveymate.app-main-41:/drawable/ic_nav_recordings.xml"
+    },
+    {
+        "merged": "com.surveymate.app-debug-39:/layout_quick_survey_overlay.xml.flat",
+        "source": "com.surveymate.app-main-41:/layout/quick_survey_overlay.xml"
+    },
+    {
+        "merged": "com.surveymate.app-debug-39:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.surveymate.app-main-41:/mipmap-xhdpi/ic_launcher.png"
     }
 ]

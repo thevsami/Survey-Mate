@@ -1,42 +1,42 @@
-com.surveymate.app-pngs-0 /Users/sami/Desktop/untitled folder/Survey-Mate/app/build/generated/res/pngs/debug
-com.surveymate.app-resValues-1 /Users/sami/Desktop/untitled folder/Survey-Mate/app/build/generated/res/resValues/debug
-com.surveymate.app-packageDebugResources-2 /Users/sami/Desktop/untitled folder/Survey-Mate/app/build/intermediates/incremental/debug/packageDebugResources/merged.dir
-com.surveymate.app-packageDebugResources-3 /Users/sami/Desktop/untitled folder/Survey-Mate/app/build/intermediates/incremental/debug/packageDebugResources/stripped.dir
-com.surveymate.app-debug-4 /Users/sami/Desktop/untitled folder/Survey-Mate/app/build/intermediates/merged_res/debug/mergeDebugResources
-com.surveymate.app-debug-5 /Users/sami/Desktop/untitled folder/Survey-Mate/app/src/debug/res
-com.surveymate.app-main-6 /Users/sami/Desktop/untitled folder/Survey-Mate/app/src/main/res
-com.surveymate.app-appcompat-resources-1.7.0-7 /private/var/folders/l7/5z0wp_2x3p7321r_ygyrnxd80000gn/T/cursor-sandbox-cache/b1b0159c9ba4adbf45259f499d2ce36a/gradle/caches/8.14.5/transforms/03442e1600e0835296ee2ffc357c38d8/transformed/appcompat-resources-1.7.0/res
-com.surveymate.app-transition-1.5.0-8 /private/var/folders/l7/5z0wp_2x3p7321r_ygyrnxd80000gn/T/cursor-sandbox-cache/b1b0159c9ba4adbf45259f499d2ce36a/gradle/caches/8.14.5/transforms/057c31283e8a21a25838870ca0b0cae8/transformed/transition-1.5.0/res
-com.surveymate.app-lifecycle-viewmodel-2.6.2-9 /private/var/folders/l7/5z0wp_2x3p7321r_ygyrnxd80000gn/T/cursor-sandbox-cache/b1b0159c9ba4adbf45259f499d2ce36a/gradle/caches/8.14.5/transforms/08cd1a5d6e7983eef8e1c59dd3fbf7d3/transformed/lifecycle-viewmodel-2.6.2/res
-com.surveymate.app-core-1.15.0-10 /private/var/folders/l7/5z0wp_2x3p7321r_ygyrnxd80000gn/T/cursor-sandbox-cache/b1b0159c9ba4adbf45259f499d2ce36a/gradle/caches/8.14.5/transforms/0de731bcd7455cc4e69b4d632ba260f5/transformed/core-1.15.0/res
-com.surveymate.app-emoji2-views-helper-1.3.0-11 /private/var/folders/l7/5z0wp_2x3p7321r_ygyrnxd80000gn/T/cursor-sandbox-cache/b1b0159c9ba4adbf45259f499d2ce36a/gradle/caches/8.14.5/transforms/1535e32979d05d81d238808a5fb63dbb/transformed/emoji2-views-helper-1.3.0/res
-com.surveymate.app-activity-1.10.0-12 /private/var/folders/l7/5z0wp_2x3p7321r_ygyrnxd80000gn/T/cursor-sandbox-cache/b1b0159c9ba4adbf45259f499d2ce36a/gradle/caches/8.14.5/transforms/155e95f627adf6f391aa4f6800b06bec/transformed/activity-1.10.0/res
-com.surveymate.app-lifecycle-runtime-ktx-2.6.2-13 /private/var/folders/l7/5z0wp_2x3p7321r_ygyrnxd80000gn/T/cursor-sandbox-cache/b1b0159c9ba4adbf45259f499d2ce36a/gradle/caches/8.14.5/transforms/19b944eff756df3c04fd7211173ebc8c/transformed/lifecycle-runtime-ktx-2.6.2/res
-com.surveymate.app-core-ktx-1.15.0-14 /private/var/folders/l7/5z0wp_2x3p7321r_ygyrnxd80000gn/T/cursor-sandbox-cache/b1b0159c9ba4adbf45259f499d2ce36a/gradle/caches/8.14.5/transforms/201866fb890334b1206faa56769143e8/transformed/core-ktx-1.15.0/res
-com.surveymate.app-core-runtime-2.2.0-15 /private/var/folders/l7/5z0wp_2x3p7321r_ygyrnxd80000gn/T/cursor-sandbox-cache/b1b0159c9ba4adbf45259f499d2ce36a/gradle/caches/8.14.5/transforms/22fd7e0ce0dbfe31db905b07bbfe1d40/transformed/core-runtime-2.2.0/res
-com.surveymate.app-material-1.12.0-16 /private/var/folders/l7/5z0wp_2x3p7321r_ygyrnxd80000gn/T/cursor-sandbox-cache/b1b0159c9ba4adbf45259f499d2ce36a/gradle/caches/8.14.5/transforms/3915eb80552bf0f3e02aa9630b81ea5c/transformed/material-1.12.0/res
-com.surveymate.app-customview-poolingcontainer-1.0.0-17 /private/var/folders/l7/5z0wp_2x3p7321r_ygyrnxd80000gn/T/cursor-sandbox-cache/b1b0159c9ba4adbf45259f499d2ce36a/gradle/caches/8.14.5/transforms/4e052e0c0eb252bc7323784fc136b3c5/transformed/customview-poolingcontainer-1.0.0/res
-com.surveymate.app-recyclerview-1.4.0-18 /private/var/folders/l7/5z0wp_2x3p7321r_ygyrnxd80000gn/T/cursor-sandbox-cache/b1b0159c9ba4adbf45259f499d2ce36a/gradle/caches/8.14.5/transforms/600b0b2ea283047165225547fda2d863/transformed/recyclerview-1.4.0/res
-com.surveymate.app-constraintlayout-2.2.1-19 /private/var/folders/l7/5z0wp_2x3p7321r_ygyrnxd80000gn/T/cursor-sandbox-cache/b1b0159c9ba4adbf45259f499d2ce36a/gradle/caches/8.14.5/transforms/632246961bade6e032fc04b30b899f91/transformed/constraintlayout-2.2.1/res
-com.surveymate.app-lifecycle-runtime-2.6.2-20 /private/var/folders/l7/5z0wp_2x3p7321r_ygyrnxd80000gn/T/cursor-sandbox-cache/b1b0159c9ba4adbf45259f499d2ce36a/gradle/caches/8.14.5/transforms/6a38271ef89f4f3406b0b21ecee0bcfd/transformed/lifecycle-runtime-2.6.2/res
-com.surveymate.app-activity-ktx-1.10.0-21 /private/var/folders/l7/5z0wp_2x3p7321r_ygyrnxd80000gn/T/cursor-sandbox-cache/b1b0159c9ba4adbf45259f499d2ce36a/gradle/caches/8.14.5/transforms/6bad09f4e815aaeeb8f068dc7d49c139/transformed/activity-ktx-1.10.0/res
-com.surveymate.app-lifecycle-viewmodel-savedstate-2.6.2-22 /private/var/folders/l7/5z0wp_2x3p7321r_ygyrnxd80000gn/T/cursor-sandbox-cache/b1b0159c9ba4adbf45259f499d2ce36a/gradle/caches/8.14.5/transforms/79bfc2d09aadddeefe00d72cd37a4322/transformed/lifecycle-viewmodel-savedstate-2.6.2/res
-com.surveymate.app-annotation-experimental-1.4.1-23 /private/var/folders/l7/5z0wp_2x3p7321r_ygyrnxd80000gn/T/cursor-sandbox-cache/b1b0159c9ba4adbf45259f499d2ce36a/gradle/caches/8.14.5/transforms/79fd671087843e367d22bf2b8c33a2f0/transformed/annotation-experimental-1.4.1/res
-com.surveymate.app-tracing-1.2.0-24 /private/var/folders/l7/5z0wp_2x3p7321r_ygyrnxd80000gn/T/cursor-sandbox-cache/b1b0159c9ba4adbf45259f499d2ce36a/gradle/caches/8.14.5/transforms/7a1f3fae06d419990bf97e2156ada3e6/transformed/tracing-1.2.0/res
-com.surveymate.app-emoji2-1.3.0-25 /private/var/folders/l7/5z0wp_2x3p7321r_ygyrnxd80000gn/T/cursor-sandbox-cache/b1b0159c9ba4adbf45259f499d2ce36a/gradle/caches/8.14.5/transforms/7d5bc6dba5a1ba8a8ca2361c7c43a802/transformed/emoji2-1.3.0/res
-com.surveymate.app-lifecycle-livedata-core-ktx-2.6.2-26 /private/var/folders/l7/5z0wp_2x3p7321r_ygyrnxd80000gn/T/cursor-sandbox-cache/b1b0159c9ba4adbf45259f499d2ce36a/gradle/caches/8.14.5/transforms/851829f58314c1a9f866b778208d5caf/transformed/lifecycle-livedata-core-ktx-2.6.2/res
-com.surveymate.app-viewpager2-1.1.0-beta02-27 /private/var/folders/l7/5z0wp_2x3p7321r_ygyrnxd80000gn/T/cursor-sandbox-cache/b1b0159c9ba4adbf45259f499d2ce36a/gradle/caches/8.14.5/transforms/8522765ac401666b6ef8be0576da2e91/transformed/viewpager2-1.1.0-beta02/res
-com.surveymate.app-profileinstaller-1.4.0-28 /private/var/folders/l7/5z0wp_2x3p7321r_ygyrnxd80000gn/T/cursor-sandbox-cache/b1b0159c9ba4adbf45259f499d2ce36a/gradle/caches/8.14.5/transforms/91811e0aa3bf285b08f4e160ee1bc215/transformed/profileinstaller-1.4.0/res
-com.surveymate.app-fragment-1.8.6-29 /private/var/folders/l7/5z0wp_2x3p7321r_ygyrnxd80000gn/T/cursor-sandbox-cache/b1b0159c9ba4adbf45259f499d2ce36a/gradle/caches/8.14.5/transforms/99f2cf2534ef1dd2105de66658f13662/transformed/fragment-1.8.6/res
-com.surveymate.app-cardview-1.0.0-30 /private/var/folders/l7/5z0wp_2x3p7321r_ygyrnxd80000gn/T/cursor-sandbox-cache/b1b0159c9ba4adbf45259f499d2ce36a/gradle/caches/8.14.5/transforms/9c08d13a08042e5c50ea8f04ef96f223/transformed/cardview-1.0.0/res
-com.surveymate.app-lifecycle-livedata-2.6.2-31 /private/var/folders/l7/5z0wp_2x3p7321r_ygyrnxd80000gn/T/cursor-sandbox-cache/b1b0159c9ba4adbf45259f499d2ce36a/gradle/caches/8.14.5/transforms/9fb8589cd9a56b7326d2ea2dcd25a8b0/transformed/lifecycle-livedata-2.6.2/res
-com.surveymate.app-savedstate-ktx-1.2.1-32 /private/var/folders/l7/5z0wp_2x3p7321r_ygyrnxd80000gn/T/cursor-sandbox-cache/b1b0159c9ba4adbf45259f499d2ce36a/gradle/caches/8.14.5/transforms/adaa45fdeac2c2e30ddeac219d5dcee7/transformed/savedstate-ktx-1.2.1/res
-com.surveymate.app-lifecycle-livedata-core-2.6.2-33 /private/var/folders/l7/5z0wp_2x3p7321r_ygyrnxd80000gn/T/cursor-sandbox-cache/b1b0159c9ba4adbf45259f499d2ce36a/gradle/caches/8.14.5/transforms/c46e3416009ca254a622daab5999d985/transformed/lifecycle-livedata-core-2.6.2/res
-com.surveymate.app-lifecycle-process-2.6.2-34 /private/var/folders/l7/5z0wp_2x3p7321r_ygyrnxd80000gn/T/cursor-sandbox-cache/b1b0159c9ba4adbf45259f499d2ce36a/gradle/caches/8.14.5/transforms/c4a36c1be49d5ae7a8306136ca9eba26/transformed/lifecycle-process-2.6.2/res
-com.surveymate.app-lifecycle-viewmodel-ktx-2.6.2-35 /private/var/folders/l7/5z0wp_2x3p7321r_ygyrnxd80000gn/T/cursor-sandbox-cache/b1b0159c9ba4adbf45259f499d2ce36a/gradle/caches/8.14.5/transforms/ca5761369bb81e97280661836ad69f5c/transformed/lifecycle-viewmodel-ktx-2.6.2/res
-com.surveymate.app-appcompat-1.7.0-36 /private/var/folders/l7/5z0wp_2x3p7321r_ygyrnxd80000gn/T/cursor-sandbox-cache/b1b0159c9ba4adbf45259f499d2ce36a/gradle/caches/8.14.5/transforms/cd6c4870e39408201efbcd9ab44da013/transformed/appcompat-1.7.0/res
-com.surveymate.app-coordinatorlayout-1.2.0-37 /private/var/folders/l7/5z0wp_2x3p7321r_ygyrnxd80000gn/T/cursor-sandbox-cache/b1b0159c9ba4adbf45259f499d2ce36a/gradle/caches/8.14.5/transforms/cedc57f012c5b07bff3b0eaf56c6e582/transformed/coordinatorlayout-1.2.0/res
-com.surveymate.app-fragment-ktx-1.8.6-38 /private/var/folders/l7/5z0wp_2x3p7321r_ygyrnxd80000gn/T/cursor-sandbox-cache/b1b0159c9ba4adbf45259f499d2ce36a/gradle/caches/8.14.5/transforms/d7e7f60107bc399d1ee839a35c0019a2/transformed/fragment-ktx-1.8.6/res
-com.surveymate.app-startup-runtime-1.1.1-39 /private/var/folders/l7/5z0wp_2x3p7321r_ygyrnxd80000gn/T/cursor-sandbox-cache/b1b0159c9ba4adbf45259f499d2ce36a/gradle/caches/8.14.5/transforms/d8d57d64fd366fc406abacd981013677/transformed/startup-runtime-1.1.1/res
-com.surveymate.app-savedstate-1.2.1-40 /private/var/folders/l7/5z0wp_2x3p7321r_ygyrnxd80000gn/T/cursor-sandbox-cache/b1b0159c9ba4adbf45259f499d2ce36a/gradle/caches/8.14.5/transforms/e1f754b42de92a4ff76fa27191006304/transformed/savedstate-1.2.1/res
-com.surveymate.app-drawerlayout-1.1.1-41 /private/var/folders/l7/5z0wp_2x3p7321r_ygyrnxd80000gn/T/cursor-sandbox-cache/b1b0159c9ba4adbf45259f499d2ce36a/gradle/caches/8.14.5/transforms/f2b316b4f9ea8a3a416a1ad2dfba175b/transformed/drawerlayout-1.1.1/res
+com.surveymate.app-appcompat-resources-1.7.0-0 /Users/sami/.gradle/caches/8.14.5/transforms/03442e1600e0835296ee2ffc357c38d8/transformed/appcompat-resources-1.7.0/res
+com.surveymate.app-transition-1.5.0-1 /Users/sami/.gradle/caches/8.14.5/transforms/057c31283e8a21a25838870ca0b0cae8/transformed/transition-1.5.0/res
+com.surveymate.app-lifecycle-viewmodel-2.6.2-2 /Users/sami/.gradle/caches/8.14.5/transforms/08cd1a5d6e7983eef8e1c59dd3fbf7d3/transformed/lifecycle-viewmodel-2.6.2/res
+com.surveymate.app-core-1.15.0-3 /Users/sami/.gradle/caches/8.14.5/transforms/0de731bcd7455cc4e69b4d632ba260f5/transformed/core-1.15.0/res
+com.surveymate.app-emoji2-views-helper-1.3.0-4 /Users/sami/.gradle/caches/8.14.5/transforms/1535e32979d05d81d238808a5fb63dbb/transformed/emoji2-views-helper-1.3.0/res
+com.surveymate.app-activity-1.10.0-5 /Users/sami/.gradle/caches/8.14.5/transforms/155e95f627adf6f391aa4f6800b06bec/transformed/activity-1.10.0/res
+com.surveymate.app-lifecycle-runtime-ktx-2.6.2-6 /Users/sami/.gradle/caches/8.14.5/transforms/19b944eff756df3c04fd7211173ebc8c/transformed/lifecycle-runtime-ktx-2.6.2/res
+com.surveymate.app-core-ktx-1.15.0-7 /Users/sami/.gradle/caches/8.14.5/transforms/201866fb890334b1206faa56769143e8/transformed/core-ktx-1.15.0/res
+com.surveymate.app-core-runtime-2.2.0-8 /Users/sami/.gradle/caches/8.14.5/transforms/22fd7e0ce0dbfe31db905b07bbfe1d40/transformed/core-runtime-2.2.0/res
+com.surveymate.app-material-1.12.0-9 /Users/sami/.gradle/caches/8.14.5/transforms/3915eb80552bf0f3e02aa9630b81ea5c/transformed/material-1.12.0/res
+com.surveymate.app-customview-poolingcontainer-1.0.0-10 /Users/sami/.gradle/caches/8.14.5/transforms/4e052e0c0eb252bc7323784fc136b3c5/transformed/customview-poolingcontainer-1.0.0/res
+com.surveymate.app-recyclerview-1.4.0-11 /Users/sami/.gradle/caches/8.14.5/transforms/600b0b2ea283047165225547fda2d863/transformed/recyclerview-1.4.0/res
+com.surveymate.app-constraintlayout-2.2.1-12 /Users/sami/.gradle/caches/8.14.5/transforms/632246961bade6e032fc04b30b899f91/transformed/constraintlayout-2.2.1/res
+com.surveymate.app-lifecycle-runtime-2.6.2-13 /Users/sami/.gradle/caches/8.14.5/transforms/6a38271ef89f4f3406b0b21ecee0bcfd/transformed/lifecycle-runtime-2.6.2/res
+com.surveymate.app-activity-ktx-1.10.0-14 /Users/sami/.gradle/caches/8.14.5/transforms/6bad09f4e815aaeeb8f068dc7d49c139/transformed/activity-ktx-1.10.0/res
+com.surveymate.app-lifecycle-viewmodel-savedstate-2.6.2-15 /Users/sami/.gradle/caches/8.14.5/transforms/79bfc2d09aadddeefe00d72cd37a4322/transformed/lifecycle-viewmodel-savedstate-2.6.2/res
+com.surveymate.app-annotation-experimental-1.4.1-16 /Users/sami/.gradle/caches/8.14.5/transforms/79fd671087843e367d22bf2b8c33a2f0/transformed/annotation-experimental-1.4.1/res
+com.surveymate.app-tracing-1.2.0-17 /Users/sami/.gradle/caches/8.14.5/transforms/7a1f3fae06d419990bf97e2156ada3e6/transformed/tracing-1.2.0/res
+com.surveymate.app-emoji2-1.3.0-18 /Users/sami/.gradle/caches/8.14.5/transforms/7d5bc6dba5a1ba8a8ca2361c7c43a802/transformed/emoji2-1.3.0/res
+com.surveymate.app-lifecycle-livedata-core-ktx-2.6.2-19 /Users/sami/.gradle/caches/8.14.5/transforms/851829f58314c1a9f866b778208d5caf/transformed/lifecycle-livedata-core-ktx-2.6.2/res
+com.surveymate.app-viewpager2-1.1.0-beta02-20 /Users/sami/.gradle/caches/8.14.5/transforms/8522765ac401666b6ef8be0576da2e91/transformed/viewpager2-1.1.0-beta02/res
+com.surveymate.app-profileinstaller-1.4.0-21 /Users/sami/.gradle/caches/8.14.5/transforms/91811e0aa3bf285b08f4e160ee1bc215/transformed/profileinstaller-1.4.0/res
+com.surveymate.app-fragment-1.8.6-22 /Users/sami/.gradle/caches/8.14.5/transforms/99f2cf2534ef1dd2105de66658f13662/transformed/fragment-1.8.6/res
+com.surveymate.app-cardview-1.0.0-23 /Users/sami/.gradle/caches/8.14.5/transforms/9c08d13a08042e5c50ea8f04ef96f223/transformed/cardview-1.0.0/res
+com.surveymate.app-lifecycle-livedata-2.6.2-24 /Users/sami/.gradle/caches/8.14.5/transforms/9fb8589cd9a56b7326d2ea2dcd25a8b0/transformed/lifecycle-livedata-2.6.2/res
+com.surveymate.app-savedstate-ktx-1.2.1-25 /Users/sami/.gradle/caches/8.14.5/transforms/adaa45fdeac2c2e30ddeac219d5dcee7/transformed/savedstate-ktx-1.2.1/res
+com.surveymate.app-lifecycle-livedata-core-2.6.2-26 /Users/sami/.gradle/caches/8.14.5/transforms/c46e3416009ca254a622daab5999d985/transformed/lifecycle-livedata-core-2.6.2/res
+com.surveymate.app-lifecycle-process-2.6.2-27 /Users/sami/.gradle/caches/8.14.5/transforms/c4a36c1be49d5ae7a8306136ca9eba26/transformed/lifecycle-process-2.6.2/res
+com.surveymate.app-lifecycle-viewmodel-ktx-2.6.2-28 /Users/sami/.gradle/caches/8.14.5/transforms/ca5761369bb81e97280661836ad69f5c/transformed/lifecycle-viewmodel-ktx-2.6.2/res
+com.surveymate.app-appcompat-1.7.0-29 /Users/sami/.gradle/caches/8.14.5/transforms/cd6c4870e39408201efbcd9ab44da013/transformed/appcompat-1.7.0/res
+com.surveymate.app-coordinatorlayout-1.2.0-30 /Users/sami/.gradle/caches/8.14.5/transforms/cedc57f012c5b07bff3b0eaf56c6e582/transformed/coordinatorlayout-1.2.0/res
+com.surveymate.app-fragment-ktx-1.8.6-31 /Users/sami/.gradle/caches/8.14.5/transforms/d7e7f60107bc399d1ee839a35c0019a2/transformed/fragment-ktx-1.8.6/res
+com.surveymate.app-startup-runtime-1.1.1-32 /Users/sami/.gradle/caches/8.14.5/transforms/d8d57d64fd366fc406abacd981013677/transformed/startup-runtime-1.1.1/res
+com.surveymate.app-savedstate-1.2.1-33 /Users/sami/.gradle/caches/8.14.5/transforms/e1f754b42de92a4ff76fa27191006304/transformed/savedstate-1.2.1/res
+com.surveymate.app-drawerlayout-1.1.1-34 /Users/sami/.gradle/caches/8.14.5/transforms/f2b316b4f9ea8a3a416a1ad2dfba175b/transformed/drawerlayout-1.1.1/res
+com.surveymate.app-pngs-35 /Users/sami/Desktop/untitled folder/Survey-Mate/app/build/generated/res/pngs/debug
+com.surveymate.app-resValues-36 /Users/sami/Desktop/untitled folder/Survey-Mate/app/build/generated/res/resValues/debug
+com.surveymate.app-packageDebugResources-37 /Users/sami/Desktop/untitled folder/Survey-Mate/app/build/intermediates/incremental/debug/packageDebugResources/merged.dir
+com.surveymate.app-packageDebugResources-38 /Users/sami/Desktop/untitled folder/Survey-Mate/app/build/intermediates/incremental/debug/packageDebugResources/stripped.dir
+com.surveymate.app-debug-39 /Users/sami/Desktop/untitled folder/Survey-Mate/app/build/intermediates/merged_res/debug/mergeDebugResources
+com.surveymate.app-debug-40 /Users/sami/Desktop/untitled folder/Survey-Mate/app/src/debug/res
+com.surveymate.app-main-41 /Users/sami/Desktop/untitled folder/Survey-Mate/app/src/main/res

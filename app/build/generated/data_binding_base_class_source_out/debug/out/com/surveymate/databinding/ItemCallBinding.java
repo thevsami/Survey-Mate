@@ -27,16 +27,21 @@ public final class ItemCallBinding implements ViewBinding {
   public final TextView avatar;
 
   @NonNull
+  public final TextView phone;
+
+  @NonNull
   public final TextView subtitle;
 
   @NonNull
   public final TextView title;
 
   private ItemCallBinding(@NonNull MaterialCardView rootView, @NonNull MaterialButton add,
-      @NonNull TextView avatar, @NonNull TextView subtitle, @NonNull TextView title) {
+      @NonNull TextView avatar, @NonNull TextView phone, @NonNull TextView subtitle,
+      @NonNull TextView title) {
     this.rootView = rootView;
     this.add = add;
     this.avatar = avatar;
+    this.phone = phone;
     this.subtitle = subtitle;
     this.title = title;
   }
@@ -80,6 +85,12 @@ public final class ItemCallBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.phone;
+      TextView phone = ViewBindings.findChildViewById(rootView, id);
+      if (phone == null) {
+        break missingId;
+      }
+
       id = R.id.subtitle;
       TextView subtitle = ViewBindings.findChildViewById(rootView, id);
       if (subtitle == null) {
@@ -92,7 +103,7 @@ public final class ItemCallBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ItemCallBinding((MaterialCardView) rootView, add, avatar, subtitle, title);
+      return new ItemCallBinding((MaterialCardView) rootView, add, avatar, phone, subtitle, title);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

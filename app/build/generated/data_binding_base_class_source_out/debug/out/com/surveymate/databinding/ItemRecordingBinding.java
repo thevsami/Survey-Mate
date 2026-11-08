@@ -4,12 +4,12 @@ package com.surveymate.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import com.google.android.material.button.MaterialButton;
 import com.google.android.material.card.MaterialCardView;
 import com.surveymate.R;
 import java.lang.NullPointerException;
@@ -21,13 +21,13 @@ public final class ItemRecordingBinding implements ViewBinding {
   private final MaterialCardView rootView;
 
   @NonNull
-  public final TextView avatar;
+  public final ImageButton delete;
 
   @NonNull
-  public final MaterialButton delete;
+  public final TextView phone;
 
   @NonNull
-  public final MaterialButton play;
+  public final ImageButton play;
 
   @NonNull
   public final TextView subtitle;
@@ -35,12 +35,12 @@ public final class ItemRecordingBinding implements ViewBinding {
   @NonNull
   public final TextView title;
 
-  private ItemRecordingBinding(@NonNull MaterialCardView rootView, @NonNull TextView avatar,
-      @NonNull MaterialButton delete, @NonNull MaterialButton play, @NonNull TextView subtitle,
+  private ItemRecordingBinding(@NonNull MaterialCardView rootView, @NonNull ImageButton delete,
+      @NonNull TextView phone, @NonNull ImageButton play, @NonNull TextView subtitle,
       @NonNull TextView title) {
     this.rootView = rootView;
-    this.avatar = avatar;
     this.delete = delete;
+    this.phone = phone;
     this.play = play;
     this.subtitle = subtitle;
     this.title = title;
@@ -73,20 +73,20 @@ public final class ItemRecordingBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.avatar;
-      TextView avatar = ViewBindings.findChildViewById(rootView, id);
-      if (avatar == null) {
-        break missingId;
-      }
-
       id = R.id.delete;
-      MaterialButton delete = ViewBindings.findChildViewById(rootView, id);
+      ImageButton delete = ViewBindings.findChildViewById(rootView, id);
       if (delete == null) {
         break missingId;
       }
 
+      id = R.id.phone;
+      TextView phone = ViewBindings.findChildViewById(rootView, id);
+      if (phone == null) {
+        break missingId;
+      }
+
       id = R.id.play;
-      MaterialButton play = ViewBindings.findChildViewById(rootView, id);
+      ImageButton play = ViewBindings.findChildViewById(rootView, id);
       if (play == null) {
         break missingId;
       }
@@ -103,7 +103,7 @@ public final class ItemRecordingBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ItemRecordingBinding((MaterialCardView) rootView, avatar, delete, play, subtitle,
+      return new ItemRecordingBinding((MaterialCardView) rootView, delete, phone, play, subtitle,
           title);
     }
     String missingId = rootView.getResources().getResourceName(id);

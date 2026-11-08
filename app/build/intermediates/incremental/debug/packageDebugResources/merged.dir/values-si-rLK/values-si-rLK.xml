@@ -29,6 +29,8 @@
     <string name="edit_survey">සංස්කරණය</string>
     <string name="empty_calls_body">අංකයෙන් survey එකක් දාන්න call log අවසරය දෙන්න.</string>
     <string name="empty_calls_title">කතා ඉතිහාසය නැහැ</string>
+    <string name="empty_recordings_body">කතාවකදී Record එබන්න. සුරැකුණු ඕඩියෝ මෙහි player එකෙන් අසන්න.</string>
+    <string name="empty_recordings_title">රෙකෝඩ් නැහැ</string>
     <string name="empty_surveys_body">කතාවකින් පසු, මෑත අංකයකින්, නැතහොත් අතින් survey එකක් එකතු කරන්න.</string>
     <string name="empty_surveys_title">තවම surveys නැහැ</string>
     <string name="grant">ඉඩ දෙන්න</string>
@@ -40,6 +42,7 @@
     <string name="mark_done">අවසන්</string>
     <string name="name_required">සේවාදායකයාගේ නම ඇතුළත් කරන්න</string>
     <string name="nav_calls">කතා</string>
+    <string name="nav_recordings">රෙකෝඩ්</string>
     <string name="nav_settings">සැකසුම්</string>
     <string name="nav_surveys">Surveys</string>
     <string name="new_survey">නව survey</string>

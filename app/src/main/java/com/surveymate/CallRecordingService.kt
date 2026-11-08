@@ -4,15 +4,13 @@ import android.app.Notification
 import android.app.Service
 import android.content.Intent
 import android.content.pm.ServiceInfo
-import android.media.MediaMetadataRetriever
-import android.media.MediaRecorder
 import android.os.Build
 import android.os.IBinder
 import androidx.core.app.NotificationCompat
 import java.io.File
 
 class CallRecordingService : Service() {
-    private var recorder: MediaRecorder? = null
+    private var capture: CallAudioCapture? = null
     private var outputFile: File? = null
     private var phone: String = ""
     private var name: String = ""
@@ -35,7 +33,7 @@ class CallRecordingService : Service() {
                     stopSelf()
                     return START_NOT_STICKY
                 }
-                if (recorder != null) return START_STICKY
+                if (capture?.active == true) return START_STICKY
                 if (!beginRecording()) {
                     CallRecordingController.publish(false)
                     stopSelf()
@@ -63,7 +61,7 @@ class CallRecordingService : Service() {
     }
 
     override fun onDestroy() {
-        if (recorder != null) finishRecording()
+        if (capture?.active == true) finishRecording()
         super.onDestroy()
     }
 
@@ -72,65 +70,37 @@ class CallRecordingService : Service() {
         val store = CallRecordingStore(this)
         val id = System.currentTimeMillis()
         val safePhone = phone.filter { it.isDigit() || it == '+' }.ifBlank { "unknown" }
-        val file = File(store.dir(), "rec_${safePhone}_$id.m4a")
-        val sources = buildList {
-            add(MediaRecorder.AudioSource.MIC)
-            add(MediaRecorder.AudioSource.VOICE_RECOGNITION)
-            add(MediaRecorder.AudioSource.CAMCORDER)
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                add(MediaRecorder.AudioSource.UNPROCESSED)
-            }
-            if (Build.VERSION.SDK_INT < 29) {
-                @Suppress("DEPRECATION")
-                add(MediaRecorder.AudioSource.VOICE_CALL)
-            }
-            add(MediaRecorder.AudioSource.VOICE_COMMUNICATION)
+        val file = File(store.dir(), "rec_${safePhone}_$id.wav")
+        val next = CallAudioCapture(this)
+        if (!next.start(file)) {
+            file.delete()
+            return false
         }
-        for (source in sources) {
-            try {
-                val next = createRecorder()
-                next.setAudioSource(source)
-                next.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4)
-                next.setAudioEncoder(MediaRecorder.AudioEncoder.AAC)
-                next.setAudioEncodingBitRate(128_000)
-                next.setAudioSamplingRate(44_100)
-                next.setAudioChannels(1)
-                next.setOutputFile(file.absolutePath)
-                next.prepare()
-                next.start()
-                recorder = next
-                outputFile = file
-                startedAt = System.currentTimeMillis()
-                CallRecordingController.publish(true, startedAt)
-                return true
-            } catch (_: Exception) {
-                releaseRecorder()
-                if (file.exists() && file.length() == 0L) file.delete()
-            }
-        }
-        return false
+        capture = next
+        outputFile = file
+        startedAt = System.currentTimeMillis()
+        CallRecordingController.publish(true, startedAt)
+        return true
     }
 
     @Synchronized
     private fun finishRecording() {
-        var file = outputFile
-        val start = startedAt
         val savedPhone = phone
         val savedName = name
-        var duration = if (start > 0L) System.currentTimeMillis() - start else 0L
-        try {
-            recorder?.apply {
-                stop()
-                reset()
-            }
+        val start = startedAt
+        val result = try {
+            capture?.stop()
         } catch (_: Exception) {
+            null
         }
-        releaseRecorder()
+        capture = null
         CallRecordingController.publish(false)
-        if (file == null || !file.exists() || file.length() < 256) {
+        var file = result?.file ?: outputFile
+        var duration = result?.durationMs ?: if (start > 0L) System.currentTimeMillis() - start else 0L
+        outputFile = null
+        startedAt = 0L
+        if (file == null || !file.exists() || file.length() < 1024) {
             file?.delete()
-            outputFile = null
-            startedAt = 0L
             return
         }
         var number = savedPhone
@@ -150,10 +120,12 @@ class CallRecordingService : Service() {
         }
         val safePhone = number.filter { it.isDigit() || it == '+' }.ifBlank { "unknown" }
         if (number.isNotBlank() && file.name.contains("unknown")) {
-            val renamed = File(file.parentFile, "rec_${safePhone}_${start.takeIf { it > 0L } ?: System.currentTimeMillis()}.m4a")
+            val renamed = File(
+                file.parentFile,
+                "rec_${safePhone}_${start.takeIf { it > 0L } ?: System.currentTimeMillis()}.wav"
+            )
             if (file.renameTo(renamed)) file = renamed
         }
-        duration = measuredDuration(file, duration)
         if (duration <= 0L) duration = 1000L
         CallRecordingStore(this).add(
             CallRecording(
@@ -166,43 +138,6 @@ class CallRecordingService : Service() {
             )
         )
         notifySaved(number.ifBlank { getString(R.string.unknown_number) })
-        outputFile = null
-        startedAt = 0L
-    }
-
-    private fun measuredDuration(file: File, fallback: Long): Long {
-        val retriever = MediaMetadataRetriever()
-        return try {
-            retriever.setDataSource(file.absolutePath)
-            retriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_DURATION)
-                ?.toLongOrNull()
-                ?.takeIf { it > 0L }
-                ?: fallback
-        } catch (_: Exception) {
-            fallback
-        } finally {
-            try {
-                retriever.release()
-            } catch (_: Exception) {
-            }
-        }
-    }
-
-    private fun createRecorder(): MediaRecorder {
-        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-            MediaRecorder(this)
-        } else {
-            @Suppress("DEPRECATION")
-            MediaRecorder()
-        }
-    }
-
-    private fun releaseRecorder() {
-        try {
-            recorder?.release()
-        } catch (_: Exception) {
-        }
-        recorder = null
     }
 
     private fun startSilentForeground() {

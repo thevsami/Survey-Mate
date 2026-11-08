@@ -2044,6 +2044,8 @@
     <string name="edit_survey">Edit survey</string>
     <string name="empty_calls_body">Allow call log access to add surveys from numbers you just spoke with.</string>
     <string name="empty_calls_title">No call history yet</string>
+    <string name="empty_recordings_body">Use Record during a call. Saved audio opens here in the player.</string>
+    <string name="empty_recordings_title">No recordings yet</string>
     <string name="empty_surveys_body">Add one after a call, pick a recent number, or create it manually.</string>
     <string name="empty_surveys_title">No surveys yet</string>
     <string description="Screen reader announcement for when a checkbox is on error. [CHAR LIMIT=NONE]" name="error_a11y_label">
@@ -2171,6 +2173,7 @@
     <string description="Button text to indicate that the widget will save the user&apos;s selection [CHAR_LIMIT=16]" name="mtrl_timepicker_confirm">OK</string>
     <string name="name_required">Please enter the client name</string>
     <string name="nav_calls">Calls</string>
+    <string name="nav_recordings">Recordings</string>
     <string name="nav_settings">Setup</string>
     <string name="nav_surveys">Surveys</string>
     <string name="new_survey">New survey</string>
