@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_surveys"
+        android:icon="@drawable/ic_nav_surveys"
+        android:title="@string/nav_surveys" />
+    <item
+        android:id="@+id/nav_calls"
+        android:icon="@drawable/ic_nav_calls"
+        android:title="@string/nav_calls" />
+    <item
+        android:id="@+id/nav_settings"
+        android:icon="@drawable/ic_nav_settings"
+        android:title="@string/nav_settings" />
+</menu>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="language_options">
+        <item>@string/language_english</item>
+        <item>@string/language_sinhala</item>
+    </string-array>
+    <color name="background">#F4F7FB</color>
+    <color name="error">#DC2626</color>
+    <color name="missed">#E11D48</color>
+    <color name="on_primary">#FFFFFF</color>
+    <color name="on_primary_container">#134E4A</color>
+    <color name="outline">#E2E8F0</color>
+    <color name="overlay_scrim">#CC0F172A</color>
+    <color name="primary">#0F766E</color>
+    <color name="primary_container">#CCFBF1</color>
+    <color name="primary_dark">#115E59</color>
+    <color name="secondary">#2563EB</color>
+    <color name="secondary_container">#DBEAFE</color>
+    <color name="success">#059669</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="surface_alt">#EEF2F7</color>
+    <color name="text_primary">#0F172A</color>
+    <color name="text_secondary">#64748B</color>
+    <color name="warning">#D97706</color>
+    <string name="add_from_call">Add survey</string>
+    <string name="add_survey">Add survey</string>
+    <string name="app_name">Survey Mate</string>
+    <string name="call_in">Incoming</string>
+    <string name="call_missed">Missed</string>
+    <string name="call_out">Outgoing</string>
+    <string name="call_whatsapp">WhatsApp</string>
+    <string name="cancel">Cancel</string>
+    <string name="client_name">Client name</string>
+    <string name="close">Close</string>
+    <string name="completed_surveys">Completed</string>
+    <string name="confirm_delete">Delete this survey?</string>
+    <string name="date_hint">Survey date</string>
+    <string name="date_time_required">Please choose a date and time</string>
+    <string name="delete">Delete</string>
+    <string name="deleted">Survey deleted</string>
+    <string name="done_label">Done</string>
+    <string name="duration_min">%1$d min</string>
+    <string name="duration_sec">%1$ds</string>
+    <string name="edit">Edit</string>
+    <string name="edit_survey">Edit survey</string>
+    <string name="empty_calls_body">Allow call log access to add surveys from numbers you just spoke with.</string>
+    <string name="empty_calls_title">No call history yet</string>
+    <string name="empty_surveys_body">Add one after a call, pick a recent number, or create it manually.</string>
+    <string name="empty_surveys_title">No surveys yet</string>
+    <string name="grant">Allow</string>
+    <string name="granted">On</string>
+    <string name="in_days">In %1$d days</string>
+    <string name="language_english">English</string>
+    <string name="language_sinhala">සිංහල</string>
+    <string name="location">Location</string>
+    <string name="mark_done">Mark done</string>
+    <string name="name_required">Please enter the client name</string>
+    <string name="nav_calls">Calls</string>
+    <string name="nav_settings">Setup</string>
+    <string name="nav_surveys">Surveys</string>
+    <string name="new_survey">New survey</string>
+    <string name="no_recent_call">No recent calls found</string>
+    <string name="notes">Additional notes</string>
+    <string name="open_settings">Open</string>
+    <string name="overdue">Overdue</string>
+    <string name="overlay_keepalive_text">Floating button is on for this call</string>
+    <string name="overlay_subtitle">Save this call as a visit</string>
+    <string name="overlay_title">Add survey</string>
+    <string name="perm_alarms">Exact alarms</string>
+    <string name="perm_alarms_desc">Fire reminders at the right time</string>
+    <string name="perm_battery">Unrestricted battery</string>
+    <string name="perm_battery_desc">Stop the phone from killing call detection</string>
+    <string name="perm_contacts">Contacts</string>
+    <string name="perm_contacts_desc">Show names next to recent numbers</string>
+    <string name="perm_listener">Notification access</string>
+    <string name="perm_listener_desc">Detect WhatsApp voice and video calls</string>
+    <string name="perm_notify">Notifications</string>
+    <string name="perm_notify_desc">Survey reminders 2 days, 1 day and 4 hours before</string>
+    <string name="perm_overlay">Display over other apps</string>
+    <string name="perm_overlay_desc">Show the movable Add survey button during a call</string>
+    <string name="perm_phone">Phone and call log</string>
+    <string name="perm_phone_desc">Read the number from incoming and outgoing calls</string>
+    <string name="phone_number">Phone number</string>
+    <string name="preview_overlay">Preview floating button</string>
+    <string name="quick_call_text">Add a survey for %1$s</string>
+    <string name="quick_call_title">Call in progress</string>
+    <string name="recent_call_error">No recent call found</string>
+    <string name="recent_calls">Recent calls</string>
+    <string name="reminder_1d">Survey tomorrow</string>
+    <string name="reminder_2d">Survey in 2 days</string>
+    <string name="reminder_4h">Survey in 4 hours</string>
+    <string name="reminder_body">%1$s · %2$s · %3$s</string>
+    <string name="reminders_hint">Reminders: 2 days before, 1 day before, and 4 hours before</string>
+    <string name="save">Save survey</string>
+    <string name="saved">Survey saved. Reminders are set.</string>
+    <string name="select_language">Language</string>
+    <string name="setup_body">Survey Mate needs a few Android permissions so the floating button and reminders work during calls.</string>
+    <string name="setup_done">You are set. The floating button will appear on the next call.</string>
+    <string name="setup_title">Make it reliable</string>
+    <string name="sinhala_voice">Voice notes</string>
+    <string name="source_call">From phone call</string>
+    <string name="source_manual">Added manually</string>
+    <string name="source_recent">From recent calls</string>
+    <string name="source_whatsapp">From WhatsApp call</string>
+    <string name="survey_title">Survey Mate</string>
+    <string name="tagline">Never miss a site visit</string>
+    <string name="time_hint">Survey time</string>
+    <string name="today">Today</string>
+    <string name="today_survey_count">%1$d today</string>
+    <string name="today_survey_zero">No surveys today</string>
+    <string name="tomorrow">Tomorrow</string>
+    <string name="unknown_number">Unknown number</string>
+    <string name="upcoming_count">%1$d upcoming</string>
+    <string name="upcoming_surveys">Upcoming surveys</string>
+    <string name="voice_prompt">Speak extra notes</string>
+    <style name="TextAppearance.SurveyMate.Title" parent="TextAppearance.Material3.HeadlineSmall">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="Theme.SurveyMate" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorOnPrimary">@color/on_primary</item>
+        <item name="colorPrimaryContainer">@color/primary_container</item>
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorSecondaryContainer">@color/secondary_container</item>
+        <item name="android:statusBarColor">@color/background</item>
+        <item name="android:navigationBarColor">@color/surface</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowBackground">@color/background</item>
+        <item name="materialCardViewStyle">@style/Widget.SurveyMate.Card</item>
+    </style>
+    <style name="Theme.SurveyMate.Add" parent="Theme.SurveyMate">
+        <item name="android:windowSoftInputMode">adjustResize</item>
+    </style>
+    <style name="Widget.SurveyMate.Card" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardElevation">0dp</item>
+        <item name="cardCornerRadius">20dp</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="strokeColor">@color/outline</item>
+        <item name="cardBackgroundColor">@color/surface</item>
+    </style>
+</resources>
