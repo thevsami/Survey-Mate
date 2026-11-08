@@ -39,8 +39,8 @@ class RecordingAdapter(
         fun bind(item: CallRecording) {
             val ctx = binding.root.context
             val number = item.phone.ifBlank { ctx.getString(R.string.unknown_number) }
-            binding.title.text = number
-            binding.avatar.text = number.filter { it.isDigit() }.takeLast(1).ifBlank { "?" }
+            binding.title.text = item.name.ifBlank { ctx.getString(R.string.call_recordings) }
+            binding.phone.text = number
             val whenText = DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.SHORT)
                 .format(Date(item.startedAt))
             val seconds = (item.durationMs / 1000).coerceAtLeast(1)
@@ -49,13 +49,11 @@ class RecordingAdapter(
             } else {
                 ctx.getString(R.string.duration_sec, seconds.toInt())
             }
-            val who = item.name.ifBlank { ctx.getString(R.string.call_recordings) }
-            binding.subtitle.text = ctx.getString(R.string.recording_subtitle, who, whenText, duration)
-            binding.play.text = if (playingId == item.id) {
-                ctx.getString(R.string.stop_playback)
-            } else {
-                ctx.getString(R.string.play_recording)
-            }
+            binding.subtitle.text = "$whenText · $duration"
+            binding.play.setImageResource(
+                if (playingId == item.id) R.drawable.ic_pause else R.drawable.ic_play
+            )
+            binding.root.setOnClickListener { onPlay(item) }
             binding.play.setOnClickListener { onPlay(item) }
             binding.delete.setOnClickListener { onDelete(item) }
         }

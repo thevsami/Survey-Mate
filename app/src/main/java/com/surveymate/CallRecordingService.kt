@@ -4,6 +4,7 @@ import android.app.Notification
 import android.app.Service
 import android.content.Intent
 import android.content.pm.ServiceInfo
+import android.media.MediaMetadataRetriever
 import android.media.MediaRecorder
 import android.os.Build
 import android.os.IBinder
@@ -73,13 +74,17 @@ class CallRecordingService : Service() {
         val safePhone = phone.filter { it.isDigit() || it == '+' }.ifBlank { "unknown" }
         val file = File(store.dir(), "rec_${safePhone}_$id.m4a")
         val sources = buildList {
+            add(MediaRecorder.AudioSource.MIC)
+            add(MediaRecorder.AudioSource.VOICE_RECOGNITION)
+            add(MediaRecorder.AudioSource.CAMCORDER)
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                add(MediaRecorder.AudioSource.UNPROCESSED)
+            }
             if (Build.VERSION.SDK_INT < 29) {
                 @Suppress("DEPRECATION")
                 add(MediaRecorder.AudioSource.VOICE_CALL)
             }
             add(MediaRecorder.AudioSource.VOICE_COMMUNICATION)
-            add(MediaRecorder.AudioSource.MIC)
-            add(MediaRecorder.AudioSource.CAMCORDER)
         }
         for (source in sources) {
             try {
@@ -87,8 +92,9 @@ class CallRecordingService : Service() {
                 next.setAudioSource(source)
                 next.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4)
                 next.setAudioEncoder(MediaRecorder.AudioEncoder.AAC)
-                next.setAudioEncodingBitRate(96_000)
+                next.setAudioEncodingBitRate(128_000)
                 next.setAudioSamplingRate(44_100)
+                next.setAudioChannels(1)
                 next.setOutputFile(file.absolutePath)
                 next.prepare()
                 next.start()
@@ -147,6 +153,7 @@ class CallRecordingService : Service() {
             val renamed = File(file.parentFile, "rec_${safePhone}_${start.takeIf { it > 0L } ?: System.currentTimeMillis()}.m4a")
             if (file.renameTo(renamed)) file = renamed
         }
+        duration = measuredDuration(file, duration)
         if (duration <= 0L) duration = 1000L
         CallRecordingStore(this).add(
             CallRecording(
@@ -161,6 +168,24 @@ class CallRecordingService : Service() {
         notifySaved(number.ifBlank { getString(R.string.unknown_number) })
         outputFile = null
         startedAt = 0L
+    }
+
+    private fun measuredDuration(file: File, fallback: Long): Long {
+        val retriever = MediaMetadataRetriever()
+        return try {
+            retriever.setDataSource(file.absolutePath)
+            retriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_DURATION)
+                ?.toLongOrNull()
+                ?.takeIf { it > 0L }
+                ?: fallback
+        } catch (_: Exception) {
+            fallback
+        } finally {
+            try {
+                retriever.release()
+            } catch (_: Exception) {
+            }
+        }
     }
 
     private fun createRecorder(): MediaRecorder {

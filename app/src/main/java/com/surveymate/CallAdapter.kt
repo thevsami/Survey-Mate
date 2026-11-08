@@ -31,8 +31,10 @@ class CallAdapter(
     inner class Holder(private val binding: ItemCallBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(call: RecentCall) {
             val ctx = binding.root.context
-            binding.title.text = call.displayName
-            binding.avatar.text = call.displayName.take(1).uppercase()
+            val number = call.number.ifBlank { ctx.getString(R.string.unknown_number) }
+            binding.title.text = call.name.ifBlank { number }
+            binding.phone.text = number
+            binding.avatar.text = (call.name.ifBlank { number }).take(1).uppercase()
             val typeLabel = when (call.type) {
                 CallLog.Calls.INCOMING_TYPE -> ctx.getString(R.string.call_in)
                 CallLog.Calls.OUTGOING_TYPE -> ctx.getString(R.string.call_out)
@@ -45,7 +47,7 @@ class CallAdapter(
             } else {
                 ctx.getString(R.string.duration_sec, call.durationSeconds.toInt())
             }
-            binding.subtitle.text = "$typeLabel · ${call.number} · $whenText · $duration"
+            binding.subtitle.text = "$typeLabel · $whenText · $duration"
             binding.add.setOnClickListener { onAdd(call) }
         }
     }

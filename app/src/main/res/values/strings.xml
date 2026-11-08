@@ -31,11 +31,14 @@
     <string name="recent_call_error">No recent call found</string>
     <string name="nav_surveys">Surveys</string>
     <string name="nav_calls">Calls</string>
+    <string name="nav_recordings">Recordings</string>
     <string name="nav_settings">Setup</string>
     <string name="empty_surveys_title">No surveys yet</string>
     <string name="empty_surveys_body">Add one after a call, pick a recent number, or create it manually.</string>
     <string name="empty_calls_title">No call history yet</string>
     <string name="empty_calls_body">Allow call log access to add surveys from numbers you just spoke with.</string>
+    <string name="empty_recordings_title">No recordings yet</string>
+    <string name="empty_recordings_body">Use Record during a call. Saved audio opens here in the player.</string>
     <string name="mark_done">Mark done</string>
     <string name="delete">Delete</string>
     <string name="edit">Edit</string>

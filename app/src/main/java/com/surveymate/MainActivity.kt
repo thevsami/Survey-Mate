@@ -30,6 +30,7 @@ class MainActivity : BaseActivity() {
             when (item.itemId) {
                 R.id.nav_surveys -> showFragment(SurveysFragment())
                 R.id.nav_calls -> showFragment(CallsFragment())
+                R.id.nav_recordings -> showFragment(RecordingsFragment())
                 R.id.nav_settings -> showFragment(SettingsFragment())
             }
             true
