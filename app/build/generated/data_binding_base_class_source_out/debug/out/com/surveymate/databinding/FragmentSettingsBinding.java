@@ -30,12 +30,21 @@ public final class FragmentSettingsBinding implements ViewBinding {
   @NonNull
   public final MaterialButton previewOverlay;
 
+  @NonNull
+  public final MaterialButton testMic;
+
+  @NonNull
+  public final MaterialButton useBuiltInRecorder;
+
   private FragmentSettingsBinding(@NonNull ScrollView rootView, @NonNull Spinner languageSpinner,
-      @NonNull LinearLayout permissionList, @NonNull MaterialButton previewOverlay) {
+      @NonNull LinearLayout permissionList, @NonNull MaterialButton previewOverlay,
+      @NonNull MaterialButton testMic, @NonNull MaterialButton useBuiltInRecorder) {
     this.rootView = rootView;
     this.languageSpinner = languageSpinner;
     this.permissionList = permissionList;
     this.previewOverlay = previewOverlay;
+    this.testMic = testMic;
+    this.useBuiltInRecorder = useBuiltInRecorder;
   }
 
   @Override
@@ -83,8 +92,20 @@ public final class FragmentSettingsBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.testMic;
+      MaterialButton testMic = ViewBindings.findChildViewById(rootView, id);
+      if (testMic == null) {
+        break missingId;
+      }
+
+      id = R.id.useBuiltInRecorder;
+      MaterialButton useBuiltInRecorder = ViewBindings.findChildViewById(rootView, id);
+      if (useBuiltInRecorder == null) {
+        break missingId;
+      }
+
       return new FragmentSettingsBinding((ScrollView) rootView, languageSpinner, permissionList,
-          previewOverlay);
+          previewOverlay, testMic, useBuiltInRecorder);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

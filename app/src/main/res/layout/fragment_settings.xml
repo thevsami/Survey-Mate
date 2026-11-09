@@ -27,6 +27,15 @@
             android:textColor="@color/text_secondary" />
 
         <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_overlay_card"
+            android:padding="12dp"
+            android:text="@string/builtin_recorder_notice"
+            android:textColor="@color/text_primary" />
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -49,6 +58,22 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:orientation="vertical" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/useBuiltInRecorder"
+            style="@style/Widget.Material3.Button.TonalButton"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/use_builtin_recorder" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/testMic"
+            style="@style/Widget.Material3.Button.TonalButton"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/test_mic" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/previewOverlay"

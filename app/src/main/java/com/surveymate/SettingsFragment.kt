@@ -2,7 +2,6 @@ package com.surveymate
 
 import android.Manifest
 import android.app.AlarmManager
-import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -12,6 +11,7 @@ import android.os.Bundle
 import android.os.PowerManager
 import android.provider.Settings
 import android.view.LayoutInflater
+import android.widget.Toast
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
@@ -34,6 +34,33 @@ class SettingsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         setupLanguage()
+        binding.useBuiltInRecorder.setOnClickListener {
+            val opened = CallRecordingController.openBuiltInRecorder(requireContext())
+            if (!opened) {
+                Toast.makeText(
+                    requireContext(),
+                    getString(R.string.builtin_recorder_notice),
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+        }
+        binding.testMic.setOnClickListener {
+            binding.testMic.isEnabled = false
+            binding.testMic.text = getString(R.string.testing_mic)
+            Thread {
+                val ok = CallAudioCapture.testMic(requireContext())
+                requireActivity().runOnUiThread {
+                    binding.testMic.isEnabled = true
+                    binding.testMic.text = getString(R.string.test_mic)
+                    val message = if (ok) {
+                        getString(R.string.mic_test_passed)
+                    } else {
+                        getString(R.string.mic_test_failed)
+                    }
+                    Toast.makeText(requireContext(), message, Toast.LENGTH_LONG).show()
+                }
+            }.start()
+        }
         binding.previewOverlay.setOnClickListener {
             CallNumberTracker.remember("+94 77 000 0000", getString(R.string.app_name), Survey.SOURCE_MANUAL)
             OverlayController.show(requireContext(), Survey.SOURCE_MANUAL)
@@ -96,8 +123,8 @@ class SettingsFragment : Fragment() {
         addRow(
             getString(R.string.perm_listener),
             getString(R.string.perm_listener_desc),
-            notificationAccessEnabled()
-        ) { startActivity(Intent(Settings.ACTION_NOTIFICATION_LISTENER_SETTINGS)) }
+            WhatsAppCallAccess.isEnabled(requireContext())
+        ) { WhatsAppCallAccess.request(requireContext()) }
         addRow(
             getString(R.string.perm_alarms),
             getString(R.string.perm_alarms_desc),
@@ -133,12 +160,6 @@ class SettingsFragment : Fragment() {
     private fun notificationsEnabled(): Boolean {
         val post = if (Build.VERSION.SDK_INT >= 33) granted(Manifest.permission.POST_NOTIFICATIONS) else true
         return post && NotificationManagerCompat.from(requireContext()).areNotificationsEnabled()
-    }
-
-    private fun notificationAccessEnabled(): Boolean {
-        val cn = ComponentName(requireContext(), WhatsAppNotificationListener::class.java)
-        val flat = Settings.Secure.getString(requireContext().contentResolver, "enabled_notification_listeners") ?: return false
-        return flat.split(":").any { ComponentName.unflattenFromString(it) == cn }
     }
 
     private fun canExactAlarms(): Boolean {

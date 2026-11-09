@@ -4,8 +4,10 @@ import android.Manifest
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Handler
 import android.os.Looper
+import android.provider.Settings
 import androidx.core.content.ContextCompat
 import java.util.concurrent.CopyOnWriteArrayList
 
@@ -55,9 +57,61 @@ object CallRecordingController {
             app.startActivity(launch)
             return
         }
+
         val identity = identity(app, phone, name)
         sessionOpen = true
         dispatch(app, ACTION_START, identity.first, identity.second)
+    }
+
+    fun openBuiltInRecorder(context: Context): Boolean {
+        val app = context.applicationContext
+        val candidatePackages = listOf(
+            "com.oppo.dialer",
+            "com.coloros.dialer",
+            "com.android.dialer",
+            "com.android.incallui",
+            "com.google.android.dialer",
+            "com.samsung.android.dialer",
+            "com.oneplus.dialer",
+            "com.xiaomi.dialer",
+            "com.miui.contacts"
+        )
+
+        val oppoSettings = listOf(
+            Intent("com.oppo.action.CALL_RECORDING_SETTINGS").setPackage("com.oppo.dialer"),
+            Intent("com.oppo.action.CALL_RECORDING_SETTINGS").setPackage("com.coloros.dialer"),
+            Intent("oppo.intent.action.CALL_RECORDING_SETTINGS").setPackage("com.oppo.dialer"),
+            Intent("oppo.intent.action.CALL_RECORDING_SETTINGS").setPackage("com.coloros.dialer"),
+            Intent(Intent.ACTION_MAIN).setClassName("com.oppo.dialer", "com.oppo.dialer.DialtactsActivity"),
+            Intent(Intent.ACTION_MAIN).setClassName("com.coloros.dialer", "com.coloros.dialer.activities.DialerActivity"),
+            Intent(Intent.ACTION_MAIN).setClassName("com.coloros.dialer", "com.coloros.dialer.DialerActivity"),
+            Intent(Intent.ACTION_MAIN).setClassName("com.android.dialer", "com.android.dialer.DialtactsActivity")
+        )
+
+        val dialerIntents = candidatePackages.mapNotNull { packageName ->
+            try {
+                Intent(Intent.ACTION_DIAL).apply {
+                    setPackage(packageName)
+                    addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                }
+            } catch (_: Exception) {
+                null
+            }
+        }
+
+        for (intent in oppoSettings + dialerIntents + listOf(
+                Intent(Intent.ACTION_DIAL).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK),
+                Intent(Intent.ACTION_VIEW, Uri.parse("tel:")).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK),
+                Intent(Settings.ACTION_SETTINGS).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            )) {
+            try {
+                app.startActivity(intent)
+                return true
+            } catch (_: Exception) {
+            }
+        }
+
+        return false
     }
 
     fun stop(context: Context, phone: String = "", name: String = "") {

@@ -47,7 +47,8 @@ class AddSurveyActivity : BaseActivity() {
             else -> getString(R.string.source_manual)
         }
 
-        val today = SimpleDateFormat("yyyy-MM-dd", Locale.US).format(Date())
+        val now = Calendar.getInstance()
+        val today = SimpleDateFormat("yyyy-MM-dd", Locale.US).format(now.time)
         if (existing != null) {
             binding.name.setText(existing.name)
             binding.phone.setText(existing.phone)
@@ -67,6 +68,14 @@ class AddSurveyActivity : BaseActivity() {
             binding.name.setText(name)
             binding.phone.setText(phone)
             binding.date.setText(today)
+            binding.time.setText(
+                String.format(
+                    Locale.US,
+                    "%02d:%02d",
+                    now.get(Calendar.HOUR_OF_DAY),
+                    now.get(Calendar.MINUTE)
+                )
+            )
         }
 
         binding.date.setOnClickListener { pickDate() }
@@ -154,7 +163,7 @@ class AddSurveyActivity : BaseActivity() {
             source = source
         )
         if (surveyId != 0L) store.update(survey) else store.add(survey)
-        ReminderScheduler.schedule(this, survey)
+        ReminderScheduler.refresh(this)
         Toast.makeText(this, getString(R.string.saved), Toast.LENGTH_SHORT).show()
         finish()
     }

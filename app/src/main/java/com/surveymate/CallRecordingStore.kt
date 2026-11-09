@@ -2,6 +2,7 @@ package com.surveymate
 
 import android.content.Context
 import android.content.SharedPreferences
+import android.os.Environment
 import org.json.JSONArray
 import java.io.File
 
@@ -11,9 +12,17 @@ class CallRecordingStore(context: Context) {
 
     fun dir(): File = File(app.filesDir, "call_recordings").apply { mkdirs() }
 
-    fun fileFor(recording: CallRecording): File = File(dir(), recording.fileName)
+    fun fileFor(recording: CallRecording): File {
+        val absolute = File(recording.fileName)
+        return if (absolute.isAbsolute && absolute.exists()) {
+            absolute
+        } else {
+            File(dir(), recording.fileName)
+        }
+    }
 
     fun all(): List<CallRecording> {
+        autoImportExternalRecordings()
         return loadRaw().filter { fileFor(it).exists() }.sortedByDescending { it.startedAt }
     }
 
@@ -42,6 +51,66 @@ class CallRecordingStore(context: Context) {
 
     fun removeListener(listener: SharedPreferences.OnSharedPreferenceChangeListener) {
         prefs.unregisterOnSharedPreferenceChangeListener(listener)
+    }
+
+    @Synchronized
+    private fun autoImportExternalRecordings() {
+        val current = loadRaw()
+        val seen = current.map { it.fileName }.toHashSet()
+        val additions = mutableListOf<CallRecording>()
+        for (file in discoverOppoFiles()) {
+            if (file.absolutePath in seen) continue
+            additions += CallRecording(
+                id = file.lastModified().takeIf { it > 0L } ?: System.currentTimeMillis(),
+                phone = "",
+                name = "OPPO call recording",
+                fileName = file.absolutePath,
+                startedAt = file.lastModified().takeIf { it > 0L } ?: System.currentTimeMillis(),
+                durationMs = (file.length() / 160L).coerceAtLeast(1_000L)
+            )
+        }
+        if (additions.isNotEmpty()) {
+            save(current + additions)
+        }
+    }
+
+    private fun discoverOppoFiles(): List<File> {
+        val roots = listOf(
+            File(Environment.getExternalStorageDirectory(), "CallRecordings"),
+            File(Environment.getExternalStorageDirectory(), "recordings"),
+            File(Environment.getExternalStorageDirectory(), "Recordings"),
+            File(Environment.getExternalStorageDirectory(), "Android/data/com.coloros.calling/files"),
+            File(Environment.getExternalStorageDirectory(), "Android/data/com.oppo.dialer/files"),
+            File(Environment.getExternalStorageDirectory(), "Android/data/com.android.dialer/files"),
+            File("/sdcard/CallRecordings"),
+            File("/sdcard/recordings"),
+            File("/sdcard/Recordings"),
+            File("/sdcard/Android/data/com.coloros.calling/files"),
+            File("/sdcard/Android/data/com.oppo.dialer/files"),
+            File("/sdcard/Android/data/com.android.dialer/files")
+        )
+        val seen = linkedSetOf<File>()
+        for (root in roots.filter { it.exists() }) {
+            walk(root, seen)
+        }
+        return seen.filter { isAudioFile(it) }.sortedByDescending { it.lastModified() }
+    }
+
+    private fun walk(root: File, seen: MutableSet<File>) {
+        if (!root.exists()) return
+        val files = root.listFiles() ?: return
+        for (file in files) {
+            if (file.isDirectory) {
+                walk(file, seen)
+            } else if (file.isFile && isAudioFile(file)) {
+                seen.add(file)
+            }
+        }
+    }
+
+    private fun isAudioFile(file: File): Boolean {
+        val ext = file.extension.lowercase()
+        return file.isFile && (ext in setOf("aac", "m4a", "mp4", "3gp", "amr", "wav", "mp3"))
     }
 
     private fun loadRaw(): List<CallRecording> {

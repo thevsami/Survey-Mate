@@ -12,6 +12,7 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.google.android.material.button.MaterialButton;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 import com.surveymate.R;
 import java.lang.NullPointerException;
@@ -26,26 +27,39 @@ public final class FragmentSurveysBinding implements ViewBinding {
   public final ExtendedFloatingActionButton addButton;
 
   @NonNull
+  public final MaterialButton chooseDateButton;
+
+  @NonNull
+  public final TextView emptyBody;
+
+  @NonNull
   public final LinearLayout emptyState;
+
+  @NonNull
+  public final TextView emptyTitle;
+
+  @NonNull
+  public final MaterialButton seeAllButton;
 
   @NonNull
   public final RecyclerView surveyList;
 
   @NonNull
-  public final TextView todayCount;
-
-  @NonNull
   public final TextView upcomingCount;
 
   private FragmentSurveysBinding(@NonNull CoordinatorLayout rootView,
-      @NonNull ExtendedFloatingActionButton addButton, @NonNull LinearLayout emptyState,
-      @NonNull RecyclerView surveyList, @NonNull TextView todayCount,
+      @NonNull ExtendedFloatingActionButton addButton, @NonNull MaterialButton chooseDateButton,
+      @NonNull TextView emptyBody, @NonNull LinearLayout emptyState, @NonNull TextView emptyTitle,
+      @NonNull MaterialButton seeAllButton, @NonNull RecyclerView surveyList,
       @NonNull TextView upcomingCount) {
     this.rootView = rootView;
     this.addButton = addButton;
+    this.chooseDateButton = chooseDateButton;
+    this.emptyBody = emptyBody;
     this.emptyState = emptyState;
+    this.emptyTitle = emptyTitle;
+    this.seeAllButton = seeAllButton;
     this.surveyList = surveyList;
-    this.todayCount = todayCount;
     this.upcomingCount = upcomingCount;
   }
 
@@ -82,9 +96,33 @@ public final class FragmentSurveysBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.chooseDateButton;
+      MaterialButton chooseDateButton = ViewBindings.findChildViewById(rootView, id);
+      if (chooseDateButton == null) {
+        break missingId;
+      }
+
+      id = R.id.emptyBody;
+      TextView emptyBody = ViewBindings.findChildViewById(rootView, id);
+      if (emptyBody == null) {
+        break missingId;
+      }
+
       id = R.id.emptyState;
       LinearLayout emptyState = ViewBindings.findChildViewById(rootView, id);
       if (emptyState == null) {
+        break missingId;
+      }
+
+      id = R.id.emptyTitle;
+      TextView emptyTitle = ViewBindings.findChildViewById(rootView, id);
+      if (emptyTitle == null) {
+        break missingId;
+      }
+
+      id = R.id.seeAllButton;
+      MaterialButton seeAllButton = ViewBindings.findChildViewById(rootView, id);
+      if (seeAllButton == null) {
         break missingId;
       }
 
@@ -94,20 +132,14 @@ public final class FragmentSurveysBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.todayCount;
-      TextView todayCount = ViewBindings.findChildViewById(rootView, id);
-      if (todayCount == null) {
-        break missingId;
-      }
-
       id = R.id.upcomingCount;
       TextView upcomingCount = ViewBindings.findChildViewById(rootView, id);
       if (upcomingCount == null) {
         break missingId;
       }
 
-      return new FragmentSurveysBinding((CoordinatorLayout) rootView, addButton, emptyState,
-          surveyList, todayCount, upcomingCount);
+      return new FragmentSurveysBinding((CoordinatorLayout) rootView, addButton, chooseDateButton,
+          emptyBody, emptyState, emptyTitle, seeAllButton, surveyList, upcomingCount);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

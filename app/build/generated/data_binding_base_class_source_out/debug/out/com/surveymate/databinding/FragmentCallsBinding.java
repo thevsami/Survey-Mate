@@ -4,12 +4,16 @@ package com.surveymate.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.button.MaterialButtonToggleGroup;
 import com.surveymate.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -20,16 +24,84 @@ public final class FragmentCallsBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
+  public final MaterialButton allCallsFilter;
+
+  @NonNull
   public final RecyclerView callList;
+
+  @NonNull
+  public final MaterialButtonToggleGroup callTypeTabs;
+
+  @NonNull
+  public final TextView emptyBody;
 
   @NonNull
   public final LinearLayout emptyState;
 
-  private FragmentCallsBinding(@NonNull LinearLayout rootView, @NonNull RecyclerView callList,
-      @NonNull LinearLayout emptyState) {
+  @NonNull
+  public final TextView emptyTitle;
+
+  @NonNull
+  public final MaterialButton incomingCallsFilter;
+
+  @NonNull
+  public final MaterialButton missedCallsFilter;
+
+  @NonNull
+  public final MaterialButton outgoingCallsFilter;
+
+  @NonNull
+  public final MaterialButton phoneCallsTab;
+
+  @NonNull
+  public final TextView screenBody;
+
+  @NonNull
+  public final TextView screenTitle;
+
+  @NonNull
+  public final MaterialButton whatsAppAccessAction;
+
+  @NonNull
+  public final MaterialButton whatsAppCallsTab;
+
+  @NonNull
+  public final MaterialButtonToggleGroup whatsAppFilterButtons;
+
+  @NonNull
+  public final HorizontalScrollView whatsAppFilters;
+
+  @NonNull
+  public final TextView whatsAppNotice;
+
+  private FragmentCallsBinding(@NonNull LinearLayout rootView,
+      @NonNull MaterialButton allCallsFilter, @NonNull RecyclerView callList,
+      @NonNull MaterialButtonToggleGroup callTypeTabs, @NonNull TextView emptyBody,
+      @NonNull LinearLayout emptyState, @NonNull TextView emptyTitle,
+      @NonNull MaterialButton incomingCallsFilter, @NonNull MaterialButton missedCallsFilter,
+      @NonNull MaterialButton outgoingCallsFilter, @NonNull MaterialButton phoneCallsTab,
+      @NonNull TextView screenBody, @NonNull TextView screenTitle,
+      @NonNull MaterialButton whatsAppAccessAction, @NonNull MaterialButton whatsAppCallsTab,
+      @NonNull MaterialButtonToggleGroup whatsAppFilterButtons,
+      @NonNull HorizontalScrollView whatsAppFilters, @NonNull TextView whatsAppNotice) {
     this.rootView = rootView;
+    this.allCallsFilter = allCallsFilter;
     this.callList = callList;
+    this.callTypeTabs = callTypeTabs;
+    this.emptyBody = emptyBody;
     this.emptyState = emptyState;
+    this.emptyTitle = emptyTitle;
+    this.incomingCallsFilter = incomingCallsFilter;
+    this.missedCallsFilter = missedCallsFilter;
+    this.outgoingCallsFilter = outgoingCallsFilter;
+    this.phoneCallsTab = phoneCallsTab;
+    this.screenBody = screenBody;
+    this.screenTitle = screenTitle;
+    this.whatsAppAccessAction = whatsAppAccessAction;
+    this.whatsAppCallsTab = whatsAppCallsTab;
+    this.whatsAppFilterButtons = whatsAppFilterButtons;
+    this.whatsAppFilters = whatsAppFilters;
+    this.whatsAppNotice = whatsAppNotice;
   }
 
   @Override
@@ -59,9 +131,27 @@ public final class FragmentCallsBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.allCallsFilter;
+      MaterialButton allCallsFilter = ViewBindings.findChildViewById(rootView, id);
+      if (allCallsFilter == null) {
+        break missingId;
+      }
+
       id = R.id.callList;
       RecyclerView callList = ViewBindings.findChildViewById(rootView, id);
       if (callList == null) {
+        break missingId;
+      }
+
+      id = R.id.callTypeTabs;
+      MaterialButtonToggleGroup callTypeTabs = ViewBindings.findChildViewById(rootView, id);
+      if (callTypeTabs == null) {
+        break missingId;
+      }
+
+      id = R.id.emptyBody;
+      TextView emptyBody = ViewBindings.findChildViewById(rootView, id);
+      if (emptyBody == null) {
         break missingId;
       }
 
@@ -71,7 +161,82 @@ public final class FragmentCallsBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentCallsBinding((LinearLayout) rootView, callList, emptyState);
+      id = R.id.emptyTitle;
+      TextView emptyTitle = ViewBindings.findChildViewById(rootView, id);
+      if (emptyTitle == null) {
+        break missingId;
+      }
+
+      id = R.id.incomingCallsFilter;
+      MaterialButton incomingCallsFilter = ViewBindings.findChildViewById(rootView, id);
+      if (incomingCallsFilter == null) {
+        break missingId;
+      }
+
+      id = R.id.missedCallsFilter;
+      MaterialButton missedCallsFilter = ViewBindings.findChildViewById(rootView, id);
+      if (missedCallsFilter == null) {
+        break missingId;
+      }
+
+      id = R.id.outgoingCallsFilter;
+      MaterialButton outgoingCallsFilter = ViewBindings.findChildViewById(rootView, id);
+      if (outgoingCallsFilter == null) {
+        break missingId;
+      }
+
+      id = R.id.phoneCallsTab;
+      MaterialButton phoneCallsTab = ViewBindings.findChildViewById(rootView, id);
+      if (phoneCallsTab == null) {
+        break missingId;
+      }
+
+      id = R.id.screenBody;
+      TextView screenBody = ViewBindings.findChildViewById(rootView, id);
+      if (screenBody == null) {
+        break missingId;
+      }
+
+      id = R.id.screenTitle;
+      TextView screenTitle = ViewBindings.findChildViewById(rootView, id);
+      if (screenTitle == null) {
+        break missingId;
+      }
+
+      id = R.id.whatsAppAccessAction;
+      MaterialButton whatsAppAccessAction = ViewBindings.findChildViewById(rootView, id);
+      if (whatsAppAccessAction == null) {
+        break missingId;
+      }
+
+      id = R.id.whatsAppCallsTab;
+      MaterialButton whatsAppCallsTab = ViewBindings.findChildViewById(rootView, id);
+      if (whatsAppCallsTab == null) {
+        break missingId;
+      }
+
+      id = R.id.whatsAppFilterButtons;
+      MaterialButtonToggleGroup whatsAppFilterButtons = ViewBindings.findChildViewById(rootView, id);
+      if (whatsAppFilterButtons == null) {
+        break missingId;
+      }
+
+      id = R.id.whatsAppFilters;
+      HorizontalScrollView whatsAppFilters = ViewBindings.findChildViewById(rootView, id);
+      if (whatsAppFilters == null) {
+        break missingId;
+      }
+
+      id = R.id.whatsAppNotice;
+      TextView whatsAppNotice = ViewBindings.findChildViewById(rootView, id);
+      if (whatsAppNotice == null) {
+        break missingId;
+      }
+
+      return new FragmentCallsBinding((LinearLayout) rootView, allCallsFilter, callList,
+          callTypeTabs, emptyBody, emptyState, emptyTitle, incomingCallsFilter, missedCallsFilter,
+          outgoingCallsFilter, phoneCallsTab, screenBody, screenTitle, whatsAppAccessAction,
+          whatsAppCallsTab, whatsAppFilterButtons, whatsAppFilters, whatsAppNotice);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

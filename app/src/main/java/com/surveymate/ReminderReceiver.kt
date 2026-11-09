@@ -8,6 +8,14 @@ import androidx.core.app.NotificationCompat
 
 class ReminderReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {
+        if (intent.action != ACTION_DAILY) return
+
+        val pendingSurveys = SurveyStore(context).all().filterNot { it.completed }
+        if (pendingSurveys.isEmpty()) {
+            ReminderScheduler.refresh(context)
+            return
+        }
+
         NotificationHelper.ensureChannels(context)
         val open = Intent(context, MainActivity::class.java).apply {
             flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
@@ -20,13 +28,35 @@ class ReminderReceiver : BroadcastReceiver() {
         )
         val notification = NotificationCompat.Builder(context, NotificationHelper.CHANNEL_REMINDERS)
             .setSmallIcon(R.drawable.ic_nav_surveys)
-            .setContentTitle(intent.getStringExtra("title") ?: context.getString(R.string.app_name))
-            .setContentText(intent.getStringExtra("text") ?: "")
+            .setContentTitle(context.getString(R.string.daily_reminder_title))
+            .setContentText(context.getString(R.string.daily_reminder_count, pendingSurveys.size))
+            .setStyle(
+                NotificationCompat.InboxStyle().setBigContentTitle(
+                    context.getString(R.string.daily_reminder_title)
+                ).also { style ->
+                    pendingSurveys.forEach { survey ->
+                        style.addLine(
+                            context.getString(
+                                R.string.daily_reminder_item,
+                                survey.name,
+                                survey.date,
+                                survey.time
+                            )
+                        )
+                    }
+                }
+            )
             .setContentIntent(pending)
             .setAutoCancel(true)
             .setPriority(NotificationCompat.PRIORITY_HIGH)
             .build()
-        val id = ((intent.getLongExtra("survey_id", System.currentTimeMillis()) % Int.MAX_VALUE).toInt())
-        context.getSystemService(android.app.NotificationManager::class.java).notify(id, notification)
+        context.getSystemService(android.app.NotificationManager::class.java)
+            .notify(NOTIFICATION_ID, notification)
+        ReminderScheduler.scheduleNext(context)
+    }
+
+    companion object {
+        const val ACTION_DAILY = "com.surveymate.action.DAILY_TODO_REMINDER"
+        private const val NOTIFICATION_ID = 7001
     }
 }

@@ -27,6 +27,12 @@ public final class ItemCallBinding implements ViewBinding {
   public final TextView avatar;
 
   @NonNull
+  public final MaterialButton callAction;
+
+  @NonNull
+  public final TextView callDetails;
+
+  @NonNull
   public final TextView phone;
 
   @NonNull
@@ -35,15 +41,22 @@ public final class ItemCallBinding implements ViewBinding {
   @NonNull
   public final TextView title;
 
+  @NonNull
+  public final MaterialButton whatsAppAction;
+
   private ItemCallBinding(@NonNull MaterialCardView rootView, @NonNull MaterialButton add,
-      @NonNull TextView avatar, @NonNull TextView phone, @NonNull TextView subtitle,
-      @NonNull TextView title) {
+      @NonNull TextView avatar, @NonNull MaterialButton callAction, @NonNull TextView callDetails,
+      @NonNull TextView phone, @NonNull TextView subtitle, @NonNull TextView title,
+      @NonNull MaterialButton whatsAppAction) {
     this.rootView = rootView;
     this.add = add;
     this.avatar = avatar;
+    this.callAction = callAction;
+    this.callDetails = callDetails;
     this.phone = phone;
     this.subtitle = subtitle;
     this.title = title;
+    this.whatsAppAction = whatsAppAction;
   }
 
   @Override
@@ -85,6 +98,18 @@ public final class ItemCallBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.callAction;
+      MaterialButton callAction = ViewBindings.findChildViewById(rootView, id);
+      if (callAction == null) {
+        break missingId;
+      }
+
+      id = R.id.callDetails;
+      TextView callDetails = ViewBindings.findChildViewById(rootView, id);
+      if (callDetails == null) {
+        break missingId;
+      }
+
       id = R.id.phone;
       TextView phone = ViewBindings.findChildViewById(rootView, id);
       if (phone == null) {
@@ -103,7 +128,14 @@ public final class ItemCallBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ItemCallBinding((MaterialCardView) rootView, add, avatar, phone, subtitle, title);
+      id = R.id.whatsAppAction;
+      MaterialButton whatsAppAction = ViewBindings.findChildViewById(rootView, id);
+      if (whatsAppAction == null) {
+        break missingId;
+      }
+
+      return new ItemCallBinding((MaterialCardView) rootView, add, avatar, callAction, callDetails,
+          phone, subtitle, title, whatsAppAction);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

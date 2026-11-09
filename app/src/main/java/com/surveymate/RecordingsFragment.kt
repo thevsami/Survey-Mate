@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SeekBar
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -117,6 +118,9 @@ class RecordingsFragment : Fragment() {
         selected = item
         showPlayer(item)
         if (!player.play(item.id, file)) {
+            if (player.lastPlayEmpty) {
+                Toast.makeText(requireContext(), R.string.recording_silent, Toast.LENGTH_LONG).show()
+            }
             binding.playerPlay.setImageResource(R.drawable.ic_play)
             adapter.setPlaying(null)
             refresh()

@@ -35,40 +35,8 @@
             android:orientation="horizontal">
 
             <com.google.android.material.card.MaterialCardView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_weight="1">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp">
-
-                    <TextView
-                        android:id="@+id/todayCount"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/today_survey_zero"
-                        android:textColor="@color/primary"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:text="@string/today"
-                        android:textColor="@color/text_secondary" />
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_weight="1">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -80,7 +48,7 @@
                         android:id="@+id/upcomingCount"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/upcoming_surveys"
+                        android:text="@string/incomplete_surveys"
                         android:textColor="@color/secondary"
                         android:textSize="20sp"
                         android:textStyle="bold" />
@@ -89,7 +57,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="@string/upcoming_surveys"
+                        android:text="@string/incomplete_surveys"
                         android:textColor="@color/text_secondary" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -99,10 +67,36 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="22dp"
-            android:text="@string/upcoming_surveys"
+            android:text="@string/incomplete_surveys"
             android:textColor="@color/text_primary"
             android:textSize="18sp"
             android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/chooseDateButton"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/select_date"
+                android:textAllCaps="false" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/seeAllButton"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/see_all_incomplete"
+                android:textAllCaps="false" />
+        </LinearLayout>
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -130,6 +124,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:id="@+id/emptyTitle"
                     android:text="@string/empty_surveys_title"
                     android:textColor="@color/text_primary"
                     android:textSize="18sp"
@@ -138,6 +133,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:id="@+id/emptyBody"
                     android:layout_marginTop="8dp"
                     android:gravity="center"
                     android:text="@string/empty_surveys_body"
@@ -153,6 +149,7 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="20dp"
         android:text="@string/add_survey"
+        android:textColor="@color/on_primary"
         app:backgroundTint="@color/primary"
         app:icon="@drawable/ic_add"
         app:iconTint="@color/on_primary" />

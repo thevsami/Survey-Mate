@@ -5,72 +5,65 @@ import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import android.os.Build
-import java.text.SimpleDateFormat
-import java.util.Locale
+import java.util.Calendar
 
 object ReminderScheduler {
-    private val format = SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.US)
+    private const val REQUEST_CODE = 7001
 
-    fun schedule(context: Context, survey: Survey) {
-        cancel(context, survey.id)
-        if (survey.completed) return
-        val whenMillis = try {
-            format.parse("${survey.date} ${survey.time}")?.time ?: return
-        } catch (_: Exception) {
-            return
-        }
-        val app = context.applicationContext
-        val alarmManager = app.getSystemService(Context.ALARM_SERVICE) as AlarmManager
-        val reminders = listOf(
-            Triple(0, whenMillis - 2L * 24 * 60 * 60 * 1000, app.getString(R.string.reminder_2d)),
-            Triple(1, whenMillis - 1L * 24 * 60 * 60 * 1000, app.getString(R.string.reminder_1d)),
-            Triple(2, whenMillis - 4L * 60 * 60 * 1000, app.getString(R.string.reminder_4h))
-        )
-        reminders.forEach { (index, trigger, title) ->
-            if (trigger <= System.currentTimeMillis()) return@forEach
-            val intent = Intent(app, ReminderReceiver::class.java).apply {
-                putExtra("title", title)
-                putExtra(
-                    "text",
-                    app.getString(R.string.reminder_body, survey.name, survey.time, survey.location.ifBlank { survey.phone })
-                )
-                putExtra("survey_id", survey.id)
-            }
-            val pending = PendingIntent.getBroadcast(
-                app,
-                requestCode(survey.id, index),
-                intent,
-                PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
-            )
-            try {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S && !alarmManager.canScheduleExactAlarms()) {
-                    alarmManager.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, trigger, pending)
-                } else {
-                    alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, trigger, pending)
-                }
-            } catch (_: SecurityException) {
-                alarmManager.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, trigger, pending)
-            }
-        }
-    }
-
-    fun cancel(context: Context, surveyId: Long) {
-        val alarmManager = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
-        repeat(3) { index ->
-            val pending = PendingIntent.getBroadcast(
-                context,
-                requestCode(surveyId, index),
-                Intent(context, ReminderReceiver::class.java),
-                PendingIntent.FLAG_NO_CREATE or PendingIntent.FLAG_IMMUTABLE
-            )
-            if (pending != null) alarmManager.cancel(pending)
-        }
+    fun refresh(context: Context) {
+        scheduleDaily(context)
     }
 
     fun rescheduleAll(context: Context) {
-        SurveyStore(context).all().filterNot { it.completed }.forEach { schedule(context, it) }
+        scheduleDaily(context)
     }
 
-    private fun requestCode(surveyId: Long, index: Int): Int =
-        ((surveyId % 1_000_000L).toInt() * 10) + index
+    fun scheduleNext(context: Context) {
+        scheduleDaily(context)
+    }
+
+    private fun cancelDaily(context: Context) {
+        val app = context.applicationContext
+        val alarmManager = app.getSystemService(Context.ALARM_SERVICE) as AlarmManager
+        val pending = dailyPendingIntent(app, PendingIntent.FLAG_NO_CREATE)
+        if (pending != null) {
+            alarmManager.cancel(pending)
+            pending.cancel()
+        }
+    }
+
+    private fun scheduleDaily(context: Context) {
+        val app = context.applicationContext
+        if (SurveyStore(app).all().none { !it.completed }) {
+            cancelDaily(app)
+            return
+        }
+
+        val nextReminder = Calendar.getInstance().apply {
+            set(Calendar.HOUR_OF_DAY, 19)
+            set(Calendar.MINUTE, 0)
+            set(Calendar.SECOND, 0)
+            set(Calendar.MILLISECOND, 0)
+            if (timeInMillis <= System.currentTimeMillis()) add(Calendar.DAY_OF_YEAR, 1)
+        }.timeInMillis
+        val alarmManager = app.getSystemService(Context.ALARM_SERVICE) as AlarmManager
+        val pending = dailyPendingIntent(app, PendingIntent.FLAG_UPDATE_CURRENT) ?: return
+        try {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S && !alarmManager.canScheduleExactAlarms()) {
+                alarmManager.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, nextReminder, pending)
+            } else {
+                alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, nextReminder, pending)
+            }
+        } catch (_: SecurityException) {
+            alarmManager.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, nextReminder, pending)
+        }
+    }
+
+    private fun dailyPendingIntent(context: Context, flags: Int): PendingIntent? =
+        PendingIntent.getBroadcast(
+            context,
+            REQUEST_CODE,
+            Intent(context, ReminderReceiver::class.java).setAction(ReminderReceiver.ACTION_DAILY),
+            flags or PendingIntent.FLAG_IMMUTABLE
+        )
 }

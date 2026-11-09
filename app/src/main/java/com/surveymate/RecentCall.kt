@@ -7,7 +7,9 @@ data class RecentCall(
     val name: String,
     val dateMillis: Long,
     val type: Int,
-    val durationSeconds: Long
+    val durationSeconds: Long,
+    val source: String = Survey.SOURCE_CALL,
+    val sourceId: String = ""
 ) {
     val displayName: String
         get() = name.ifBlank { number.ifBlank { "Unknown" } }

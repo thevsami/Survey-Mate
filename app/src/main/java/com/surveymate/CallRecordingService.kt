@@ -70,7 +70,7 @@ class CallRecordingService : Service() {
         val store = CallRecordingStore(this)
         val id = System.currentTimeMillis()
         val safePhone = phone.filter { it.isDigit() || it == '+' }.ifBlank { "unknown" }
-        val file = File(store.dir(), "rec_${safePhone}_$id.wav")
+        val file = File(store.dir(), "rec_${safePhone}_$id.m4a")
         val next = CallAudioCapture(this)
         if (!next.start(file)) {
             file.delete()
@@ -122,7 +122,7 @@ class CallRecordingService : Service() {
         if (number.isNotBlank() && file.name.contains("unknown")) {
             val renamed = File(
                 file.parentFile,
-                "rec_${safePhone}_${start.takeIf { it > 0L } ?: System.currentTimeMillis()}.wav"
+                "rec_${safePhone}_${start.takeIf { it > 0L } ?: System.currentTimeMillis()}.m4a"
             )
             if (file.renameTo(renamed)) file = renamed
         }
@@ -132,7 +132,7 @@ class CallRecordingService : Service() {
                 id = start.takeIf { it > 0L } ?: System.currentTimeMillis(),
                 phone = number,
                 name = contact,
-                fileName = file.name,
+                fileName = file.absolutePath,
                 startedAt = start.takeIf { it > 0L } ?: System.currentTimeMillis(),
                 durationMs = duration
             )
